@@ -208,22 +208,17 @@ int SGX_CDECL main(int argc, char *argv[])
     ecall_thread_functions();
     
     //
-    //unsigned long va[1]={0};
-    
-    unsigned long va,v2;
+    unsigned long va;
     ecall_read(global_eid, &va);
     printf("test:0x%lx\n",va);
-
-    asm volatile(
-        "mov %1,%%rdi\n\t"
-	"mov %%rdi,%0\n\t"
-	:"=a"(v2):"r"(va):
-    );
-    printf("v2=0x%lx\n",v2);
-    //ecall_write(global_eid);
-    unsigned long *v3=&va;
-    ecall_write2(global_eid,v3);    
     
+    asm volatile(
+        "mov %0,%%rdi\n\t"
+	::"r"(va):
+    );
+    ecall_write(global_eid);
+    
+    ecall_write2(global_eid,(unsigned long*)va);    
     //
 
     /* Destroy the enclave */

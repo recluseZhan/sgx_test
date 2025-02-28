@@ -50,32 +50,28 @@ int printf(const char* fmt, ...)
     return (int)strnlen(buf, BUFSIZ - 1) + 1;
 }
 
+//
 static unsigned long data = 0x123;
 void ecall_read(unsigned long *va){
     unsigned long data_va = (unsigned long)&data;
-    //va = &data;
     *va = data_va;
     printf("va:0x%lx,&data,0x%lx,data:0x%lx\n",*va,&data,data);
-    //*va = data;
-    //return SGX_SUCCESS;
-    //memcpy(va,&data_va,len);
-    //ocall_write(va);
 }
+
 void ecall_write(void){
     unsigned long va;
     asm volatile(
         "mov %%rdi,%0\n\t"
-	:"=a"(va)::
+	:"=r"(va)::
     );
     //*va=0x234;
     printf("test2:0x%lx\n",va);
     
 }
+
 void ecall_write2(unsigned long *va){
-    printf("t3:0x%lx\n",*va);
-    unsigned long va_addr = *va;
-    unsigned long *va_value = (unsigned long *)va_addr;
-    printf("test3.0:va_value:0x%lx,*va_value:0x%lx\n",va_value,*va_value);
-    *va_value = 0x234;
-    printf("test3:va_value:0x%lx,*va_value:0x%lx\n",va_value,*va_value);
+    printf("t3.1:0x%lx,0x%lx\n",va,*va);
+    *va = 0x234;
+    printf("t3.2:0x%lx,0x%lx\n",va,*va);
 }
+//
