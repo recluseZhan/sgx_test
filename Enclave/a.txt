@@ -1,0 +1,2930 @@
+
+Enclave_t.o:     file format elf64-x86-64
+
+
+Disassembly of section .text.sgx_ecall_type_char:
+
+0000000000000000 <sgx_ecall_type_char>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_type_char+0x2c>
+  17:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  1b:	be 01 00 00 00       	mov    $0x1,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_type_char+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_type_char+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 48                	jmp    7b <sgx_ecall_type_char+0x7b>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  3a:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  42:	48 8d 45 f3          	lea    -0xd(%rbp),%rax
+  46:	b9 01 00 00 00       	mov    $0x1,%ecx
+  4b:	be 01 00 00 00       	mov    $0x1,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_type_char+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_type_char+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 18                	jmp    7b <sgx_ecall_type_char+0x7b>
+  63:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%rbp)
+  6a:	0f b6 45 f3          	movzbl -0xd(%rbp),%eax
+  6e:	0f be c0             	movsbl %al,%eax
+  71:	89 c7                	mov    %eax,%edi
+  73:	e8 00 00 00 00       	call   78 <sgx_ecall_type_char+0x78>
+  78:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  7b:	c9                   	leave
+  7c:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_type_int:
+
+0000000000000000 <sgx_ecall_type_int>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_type_int+0x2c>
+  17:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  1b:	be 04 00 00 00       	mov    $0x4,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_type_int+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_type_int+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 44                	jmp    77 <sgx_ecall_type_int+0x77>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  3a:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  42:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  46:	b9 04 00 00 00       	mov    $0x4,%ecx
+  4b:	be 04 00 00 00       	mov    $0x4,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_type_int+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_type_int+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 14                	jmp    77 <sgx_ecall_type_int+0x77>
+  63:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%rbp)
+  6a:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  6d:	89 c7                	mov    %eax,%edi
+  6f:	e8 00 00 00 00       	call   74 <sgx_ecall_type_int+0x74>
+  74:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  77:	c9                   	leave
+  78:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_type_float:
+
+0000000000000000 <sgx_ecall_type_float>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_type_float+0x2c>
+  17:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  1b:	be 04 00 00 00       	mov    $0x4,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_type_float+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_type_float+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 46                	jmp    79 <sgx_ecall_type_float+0x79>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  3a:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  42:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  46:	b9 04 00 00 00       	mov    $0x4,%ecx
+  4b:	be 04 00 00 00       	mov    $0x4,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_type_float+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_type_float+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 16                	jmp    79 <sgx_ecall_type_float+0x79>
+  63:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%rbp)
+  6a:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  6d:	66 0f 6e c0          	movd   %eax,%xmm0
+  71:	e8 00 00 00 00       	call   76 <sgx_ecall_type_float+0x76>
+  76:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  79:	c9                   	leave
+  7a:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_type_double:
+
+0000000000000000 <sgx_ecall_type_double>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_type_double+0x2c>
+  17:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_type_double+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_type_double+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 48                	jmp    7b <sgx_ecall_type_double+0x7b>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  3a:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  42:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  46:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4b:	be 08 00 00 00       	mov    $0x8,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_type_double+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_type_double+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 18                	jmp    7b <sgx_ecall_type_double+0x7b>
+  63:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%rbp)
+  6a:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  6e:	66 48 0f 6e c0       	movq   %rax,%xmm0
+  73:	e8 00 00 00 00       	call   78 <sgx_ecall_type_double+0x78>
+  78:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  7b:	c9                   	leave
+  7c:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_type_size_t:
+
+0000000000000000 <sgx_ecall_type_size_t>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_type_size_t+0x2c>
+  17:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_type_size_t+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_type_size_t+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 46                	jmp    79 <sgx_ecall_type_size_t+0x79>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  3a:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  42:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  46:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4b:	be 08 00 00 00       	mov    $0x8,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_type_size_t+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_type_size_t+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 16                	jmp    79 <sgx_ecall_type_size_t+0x79>
+  63:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%rbp)
+  6a:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  6e:	48 89 c7             	mov    %rax,%rdi
+  71:	e8 00 00 00 00       	call   76 <sgx_ecall_type_size_t+0x76>
+  76:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  79:	c9                   	leave
+  7a:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_type_wchar_t:
+
+0000000000000000 <sgx_ecall_type_wchar_t>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_type_wchar_t+0x2c>
+  17:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  1b:	be 04 00 00 00       	mov    $0x4,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_type_wchar_t+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_type_wchar_t+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 44                	jmp    77 <sgx_ecall_type_wchar_t+0x77>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  3a:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  42:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  46:	b9 04 00 00 00       	mov    $0x4,%ecx
+  4b:	be 04 00 00 00       	mov    $0x4,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_type_wchar_t+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_type_wchar_t+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 14                	jmp    77 <sgx_ecall_type_wchar_t+0x77>
+  63:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%rbp)
+  6a:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  6d:	89 c7                	mov    %eax,%edi
+  6f:	e8 00 00 00 00       	call   74 <sgx_ecall_type_wchar_t+0x74>
+  74:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  77:	c9                   	leave
+  78:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_type_struct:
+
+0000000000000000 <sgx_ecall_type_struct>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_type_struct+0x2c>
+  17:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  1b:	be 10 00 00 00       	mov    $0x10,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_type_struct+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_type_struct+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 4b                	jmp    7e <sgx_ecall_type_struct+0x7e>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  3a:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  3e:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  42:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  46:	b9 10 00 00 00       	mov    $0x10,%ecx
+  4b:	be 10 00 00 00       	mov    $0x10,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_type_struct+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_type_struct+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 1b                	jmp    7e <sgx_ecall_type_struct+0x7e>
+  63:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+  6a:	8b 55 f0             	mov    -0x10(%rbp),%edx
+  6d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  71:	89 d7                	mov    %edx,%edi
+  73:	48 89 c6             	mov    %rax,%rsi
+  76:	e8 00 00 00 00       	call   7b <sgx_ecall_type_struct+0x7b>
+  7b:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  7e:	c9                   	leave
+  7f:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_type_enum_union:
+
+0000000000000000 <sgx_ecall_type_enum_union>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_type_enum_union+0x2c>
+  17:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  1b:	be 10 00 00 00       	mov    $0x10,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_type_enum_union+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_type_enum_union+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 53                	jmp    86 <sgx_ecall_type_enum_union+0x86>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  3a:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  3e:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  42:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  46:	b9 10 00 00 00       	mov    $0x10,%ecx
+  4b:	be 10 00 00 00       	mov    $0x10,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_type_enum_union+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_type_enum_union+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 23                	jmp    86 <sgx_ecall_type_enum_union+0x86>
+  63:	c7 45 dc 00 00 00 00 	movl   $0x0,-0x24(%rbp)
+  6a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  6e:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  72:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  75:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  79:	48 89 d6             	mov    %rdx,%rsi
+  7c:	89 c7                	mov    %eax,%edi
+  7e:	e8 00 00 00 00       	call   83 <sgx_ecall_type_enum_union+0x83>
+  83:	8b 45 dc             	mov    -0x24(%rbp),%eax
+  86:	c9                   	leave
+  87:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_pointer_user_check:
+
+0000000000000000 <sgx_ecall_pointer_user_check>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 50          	sub    $0x50,%rsp
+   c:	48 89 7d b8          	mov    %rdi,-0x48(%rbp)
+  10:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_pointer_user_check+0x2c>
+  17:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  1b:	be 18 00 00 00       	mov    $0x18,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_pointer_user_check+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_pointer_user_check+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 81 00 00 00       	jmp    b7 <sgx_ecall_pointer_user_check+0xb7>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  3d:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+  41:	48 8b 55 d0          	mov    -0x30(%rbp),%rdx
+  45:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+  49:	b9 18 00 00 00       	mov    $0x18,%ecx
+  4e:	be 18 00 00 00       	mov    $0x18,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_pointer_user_check+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 07                	je     66 <sgx_ecall_pointer_user_check+0x66>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	eb 51                	jmp    b7 <sgx_ecall_pointer_user_check+0xb7>
+  66:	c7 45 c4 00 00 00 00 	movl   $0x0,-0x3c(%rbp)
+  6d:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  71:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  75:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  79:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  7d:	48 89 d6             	mov    %rdx,%rsi
+  80:	48 89 c7             	mov    %rax,%rdi
+  83:	e8 00 00 00 00       	call   88 <sgx_ecall_pointer_user_check+0x88>
+  88:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+  8c:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  90:	48 8d 55 c8          	lea    -0x38(%rbp),%rdx
+  94:	b9 08 00 00 00       	mov    $0x8,%ecx
+  99:	be 08 00 00 00       	mov    $0x8,%esi
+  9e:	48 89 c7             	mov    %rax,%rdi
+  a1:	e8 00 00 00 00       	call   a6 <sgx_ecall_pointer_user_check+0xa6>
+  a6:	85 c0                	test   %eax,%eax
+  a8:	74 09                	je     b3 <sgx_ecall_pointer_user_check+0xb3>
+  aa:	c7 45 c4 01 00 00 00 	movl   $0x1,-0x3c(%rbp)
+  b1:	eb 01                	jmp    b4 <sgx_ecall_pointer_user_check+0xb4>
+  b3:	90                   	nop
+  b4:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+  b7:	c9                   	leave
+  b8:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_pointer_in:
+
+0000000000000000 <sgx_ecall_pointer_in>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_pointer_in+0x2c>
+  17:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_pointer_in+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_pointer_in+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 07 01 00 00       	jmp    13d <sgx_ecall_pointer_in+0x13d>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  3d:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  41:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  45:	48 8d 45 d8          	lea    -0x28(%rbp),%rax
+  49:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4e:	be 08 00 00 00       	mov    $0x8,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_pointer_in+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_pointer_in+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 d4 00 00 00       	jmp    13d <sgx_ecall_pointer_in+0x13d>
+  69:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%rbp)
+  70:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  74:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  78:	48 c7 45 f8 04 00 00 	movq   $0x4,-0x8(%rbp)
+  7f:	00 
+  80:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  87:	00 
+  88:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  8d:	74 21                	je     b0 <sgx_ecall_pointer_in+0xb0>
+  8f:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  93:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  97:	48 89 d6             	mov    %rdx,%rsi
+  9a:	48 89 c7             	mov    %rax,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <sgx_ecall_pointer_in+0xa2>
+  a2:	85 c0                	test   %eax,%eax
+  a4:	75 0a                	jne    b0 <sgx_ecall_pointer_in+0xb0>
+  a6:	b8 02 00 00 00       	mov    $0x2,%eax
+  ab:	e9 8d 00 00 00       	jmp    13d <sgx_ecall_pointer_in+0x13d>
+  b0:	0f ae e8             	lfence
+  b3:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  b8:	74 61                	je     11b <sgx_ecall_pointer_in+0x11b>
+  ba:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  bf:	74 5a                	je     11b <sgx_ecall_pointer_in+0x11b>
+  c1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  c5:	83 e0 03             	and    $0x3,%eax
+  c8:	48 85 c0             	test   %rax,%rax
+  cb:	74 09                	je     d6 <sgx_ecall_pointer_in+0xd6>
+  cd:	c7 45 d4 02 00 00 00 	movl   $0x2,-0x2c(%rbp)
+  d4:	eb 51                	jmp    127 <sgx_ecall_pointer_in+0x127>
+  d6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  da:	48 89 c7             	mov    %rax,%rdi
+  dd:	e8 00 00 00 00       	call   e2 <sgx_ecall_pointer_in+0xe2>
+  e2:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  e6:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  eb:	75 09                	jne    f6 <sgx_ecall_pointer_in+0xf6>
+  ed:	c7 45 d4 03 00 00 00 	movl   $0x3,-0x2c(%rbp)
+  f4:	eb 31                	jmp    127 <sgx_ecall_pointer_in+0x127>
+  f6:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+  fa:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  fe:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 102:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 106:	48 89 c7             	mov    %rax,%rdi
+ 109:	e8 00 00 00 00       	call   10e <sgx_ecall_pointer_in+0x10e>
+ 10e:	85 c0                	test   %eax,%eax
+ 110:	74 09                	je     11b <sgx_ecall_pointer_in+0x11b>
+ 112:	c7 45 d4 01 00 00 00 	movl   $0x1,-0x2c(%rbp)
+ 119:	eb 0c                	jmp    127 <sgx_ecall_pointer_in+0x127>
+ 11b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 11f:	48 89 c7             	mov    %rax,%rdi
+ 122:	e8 00 00 00 00       	call   127 <sgx_ecall_pointer_in+0x127>
+ 127:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 12c:	74 0c                	je     13a <sgx_ecall_pointer_in+0x13a>
+ 12e:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 132:	48 89 c7             	mov    %rax,%rdi
+ 135:	e8 00 00 00 00       	call   13a <sgx_ecall_pointer_in+0x13a>
+ 13a:	8b 45 d4             	mov    -0x2c(%rbp),%eax
+ 13d:	c9                   	leave
+ 13e:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_pointer_out:
+
+0000000000000000 <sgx_ecall_pointer_out>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_pointer_out+0x2c>
+  17:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_pointer_out+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_pointer_out+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 24 01 00 00       	jmp    15a <sgx_ecall_pointer_out+0x15a>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  3d:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  41:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  45:	48 8d 45 d8          	lea    -0x28(%rbp),%rax
+  49:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4e:	be 08 00 00 00       	mov    $0x8,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_pointer_out+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_pointer_out+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 f1 00 00 00       	jmp    15a <sgx_ecall_pointer_out+0x15a>
+  69:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%rbp)
+  70:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  74:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  78:	48 c7 45 f8 04 00 00 	movq   $0x4,-0x8(%rbp)
+  7f:	00 
+  80:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  87:	00 
+  88:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  8d:	74 21                	je     b0 <sgx_ecall_pointer_out+0xb0>
+  8f:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  93:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  97:	48 89 d6             	mov    %rdx,%rsi
+  9a:	48 89 c7             	mov    %rax,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <sgx_ecall_pointer_out+0xa2>
+  a2:	85 c0                	test   %eax,%eax
+  a4:	75 0a                	jne    b0 <sgx_ecall_pointer_out+0xb0>
+  a6:	b8 02 00 00 00       	mov    $0x2,%eax
+  ab:	e9 aa 00 00 00       	jmp    15a <sgx_ecall_pointer_out+0x15a>
+  b0:	0f ae e8             	lfence
+  b3:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  b8:	74 51                	je     10b <sgx_ecall_pointer_out+0x10b>
+  ba:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  bf:	74 4a                	je     10b <sgx_ecall_pointer_out+0x10b>
+  c1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  c5:	83 e0 03             	and    $0x3,%eax
+  c8:	48 85 c0             	test   %rax,%rax
+  cb:	74 09                	je     d6 <sgx_ecall_pointer_out+0xd6>
+  cd:	c7 45 d4 02 00 00 00 	movl   $0x2,-0x2c(%rbp)
+  d4:	eb 6e                	jmp    144 <sgx_ecall_pointer_out+0x144>
+  d6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  da:	48 89 c7             	mov    %rax,%rdi
+  dd:	e8 00 00 00 00       	call   e2 <sgx_ecall_pointer_out+0xe2>
+  e2:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  e6:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  eb:	75 09                	jne    f6 <sgx_ecall_pointer_out+0xf6>
+  ed:	c7 45 d4 03 00 00 00 	movl   $0x3,-0x2c(%rbp)
+  f4:	eb 4e                	jmp    144 <sgx_ecall_pointer_out+0x144>
+  f6:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  fa:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  fe:	be 00 00 00 00       	mov    $0x0,%esi
+ 103:	48 89 c7             	mov    %rax,%rdi
+ 106:	e8 00 00 00 00       	call   10b <sgx_ecall_pointer_out+0x10b>
+ 10b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 10f:	48 89 c7             	mov    %rax,%rdi
+ 112:	e8 00 00 00 00       	call   117 <sgx_ecall_pointer_out+0x117>
+ 117:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 11c:	74 25                	je     143 <sgx_ecall_pointer_out+0x143>
+ 11e:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+ 122:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 126:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 12a:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 12e:	48 89 c7             	mov    %rax,%rdi
+ 131:	e8 00 00 00 00       	call   136 <sgx_ecall_pointer_out+0x136>
+ 136:	85 c0                	test   %eax,%eax
+ 138:	74 09                	je     143 <sgx_ecall_pointer_out+0x143>
+ 13a:	c7 45 d4 01 00 00 00 	movl   $0x1,-0x2c(%rbp)
+ 141:	eb 01                	jmp    144 <sgx_ecall_pointer_out+0x144>
+ 143:	90                   	nop
+ 144:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 149:	74 0c                	je     157 <sgx_ecall_pointer_out+0x157>
+ 14b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 14f:	48 89 c7             	mov    %rax,%rdi
+ 152:	e8 00 00 00 00       	call   157 <sgx_ecall_pointer_out+0x157>
+ 157:	8b 45 d4             	mov    -0x2c(%rbp),%eax
+ 15a:	c9                   	leave
+ 15b:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_pointer_in_out:
+
+0000000000000000 <sgx_ecall_pointer_in_out>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_pointer_in_out+0x2c>
+  17:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_pointer_in_out+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_pointer_in_out+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 34 01 00 00       	jmp    16a <sgx_ecall_pointer_in_out+0x16a>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  3d:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  41:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  45:	48 8d 45 d8          	lea    -0x28(%rbp),%rax
+  49:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4e:	be 08 00 00 00       	mov    $0x8,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_pointer_in_out+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_pointer_in_out+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 01 01 00 00       	jmp    16a <sgx_ecall_pointer_in_out+0x16a>
+  69:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%rbp)
+  70:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  74:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  78:	48 c7 45 f8 04 00 00 	movq   $0x4,-0x8(%rbp)
+  7f:	00 
+  80:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  87:	00 
+  88:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  8d:	74 21                	je     b0 <sgx_ecall_pointer_in_out+0xb0>
+  8f:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  93:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  97:	48 89 d6             	mov    %rdx,%rsi
+  9a:	48 89 c7             	mov    %rax,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <sgx_ecall_pointer_in_out+0xa2>
+  a2:	85 c0                	test   %eax,%eax
+  a4:	75 0a                	jne    b0 <sgx_ecall_pointer_in_out+0xb0>
+  a6:	b8 02 00 00 00       	mov    $0x2,%eax
+  ab:	e9 ba 00 00 00       	jmp    16a <sgx_ecall_pointer_in_out+0x16a>
+  b0:	0f ae e8             	lfence
+  b3:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  b8:	74 61                	je     11b <sgx_ecall_pointer_in_out+0x11b>
+  ba:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  bf:	74 5a                	je     11b <sgx_ecall_pointer_in_out+0x11b>
+  c1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  c5:	83 e0 03             	and    $0x3,%eax
+  c8:	48 85 c0             	test   %rax,%rax
+  cb:	74 09                	je     d6 <sgx_ecall_pointer_in_out+0xd6>
+  cd:	c7 45 d4 02 00 00 00 	movl   $0x2,-0x2c(%rbp)
+  d4:	eb 7e                	jmp    154 <sgx_ecall_pointer_in_out+0x154>
+  d6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  da:	48 89 c7             	mov    %rax,%rdi
+  dd:	e8 00 00 00 00       	call   e2 <sgx_ecall_pointer_in_out+0xe2>
+  e2:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  e6:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  eb:	75 09                	jne    f6 <sgx_ecall_pointer_in_out+0xf6>
+  ed:	c7 45 d4 03 00 00 00 	movl   $0x3,-0x2c(%rbp)
+  f4:	eb 5e                	jmp    154 <sgx_ecall_pointer_in_out+0x154>
+  f6:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+  fa:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  fe:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 102:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 106:	48 89 c7             	mov    %rax,%rdi
+ 109:	e8 00 00 00 00       	call   10e <sgx_ecall_pointer_in_out+0x10e>
+ 10e:	85 c0                	test   %eax,%eax
+ 110:	74 09                	je     11b <sgx_ecall_pointer_in_out+0x11b>
+ 112:	c7 45 d4 01 00 00 00 	movl   $0x1,-0x2c(%rbp)
+ 119:	eb 39                	jmp    154 <sgx_ecall_pointer_in_out+0x154>
+ 11b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 11f:	48 89 c7             	mov    %rax,%rdi
+ 122:	e8 00 00 00 00       	call   127 <sgx_ecall_pointer_in_out+0x127>
+ 127:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 12c:	74 25                	je     153 <sgx_ecall_pointer_in_out+0x153>
+ 12e:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+ 132:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 136:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 13a:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 13e:	48 89 c7             	mov    %rax,%rdi
+ 141:	e8 00 00 00 00       	call   146 <sgx_ecall_pointer_in_out+0x146>
+ 146:	85 c0                	test   %eax,%eax
+ 148:	74 09                	je     153 <sgx_ecall_pointer_in_out+0x153>
+ 14a:	c7 45 d4 01 00 00 00 	movl   $0x1,-0x2c(%rbp)
+ 151:	eb 01                	jmp    154 <sgx_ecall_pointer_in_out+0x154>
+ 153:	90                   	nop
+ 154:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 159:	74 0c                	je     167 <sgx_ecall_pointer_in_out+0x167>
+ 15b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 15f:	48 89 c7             	mov    %rax,%rdi
+ 162:	e8 00 00 00 00       	call   167 <sgx_ecall_pointer_in_out+0x167>
+ 167:	8b 45 d4             	mov    -0x2c(%rbp),%eax
+ 16a:	c9                   	leave
+ 16b:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_pointer_string:
+
+0000000000000000 <sgx_ecall_pointer_string>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 50          	sub    $0x50,%rsp
+   c:	48 89 7d b8          	mov    %rdi,-0x48(%rbp)
+  10:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_pointer_string+0x2c>
+  17:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  1b:	be 10 00 00 00       	mov    $0x10,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_pointer_string+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_pointer_string+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 80 01 00 00       	jmp    1b6 <sgx_ecall_pointer_string+0x1b6>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  3d:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  41:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  45:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  49:	b9 10 00 00 00       	mov    $0x10,%ecx
+  4e:	be 10 00 00 00       	mov    $0x10,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_pointer_string+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_pointer_string+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 4d 01 00 00       	jmp    1b6 <sgx_ecall_pointer_string+0x1b6>
+  69:	c7 45 cc 00 00 00 00 	movl   $0x0,-0x34(%rbp)
+  70:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  74:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  78:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  7c:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  80:	48 c7 45 d0 00 00 00 	movq   $0x0,-0x30(%rbp)
+  87:	00 
+  88:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  8d:	74 21                	je     b0 <sgx_ecall_pointer_string+0xb0>
+  8f:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  93:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  97:	48 89 d6             	mov    %rdx,%rsi
+  9a:	48 89 c7             	mov    %rax,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <sgx_ecall_pointer_string+0xa2>
+  a2:	85 c0                	test   %eax,%eax
+  a4:	75 0a                	jne    b0 <sgx_ecall_pointer_string+0xb0>
+  a6:	b8 02 00 00 00       	mov    $0x2,%eax
+  ab:	e9 06 01 00 00       	jmp    1b6 <sgx_ecall_pointer_string+0x1b6>
+  b0:	0f ae e8             	lfence
+  b3:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  b8:	0f 84 83 00 00 00    	je     141 <sgx_ecall_pointer_string+0x141>
+  be:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  c3:	74 7c                	je     141 <sgx_ecall_pointer_string+0x141>
+  c5:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  c9:	48 89 c7             	mov    %rax,%rdi
+  cc:	e8 00 00 00 00       	call   d1 <sgx_ecall_pointer_string+0xd1>
+  d1:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+  d5:	48 83 7d d0 00       	cmpq   $0x0,-0x30(%rbp)
+  da:	75 0c                	jne    e8 <sgx_ecall_pointer_string+0xe8>
+  dc:	c7 45 cc 03 00 00 00 	movl   $0x3,-0x34(%rbp)
+  e3:	e9 b8 00 00 00       	jmp    1a0 <sgx_ecall_pointer_string+0x1a0>
+  e8:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+  ec:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  f0:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+  f4:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  f8:	48 89 c7             	mov    %rax,%rdi
+  fb:	e8 00 00 00 00       	call   100 <sgx_ecall_pointer_string+0x100>
+ 100:	85 c0                	test   %eax,%eax
+ 102:	74 0c                	je     110 <sgx_ecall_pointer_string+0x110>
+ 104:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%rbp)
+ 10b:	e9 90 00 00 00       	jmp    1a0 <sgx_ecall_pointer_string+0x1a0>
+ 110:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 114:	48 8d 50 ff          	lea    -0x1(%rax),%rdx
+ 118:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 11c:	48 01 d0             	add    %rdx,%rax
+ 11f:	c6 00 00             	movb   $0x0,(%rax)
+ 122:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 126:	48 89 c7             	mov    %rax,%rdi
+ 129:	e8 00 00 00 00       	call   12e <sgx_ecall_pointer_string+0x12e>
+ 12e:	48 83 c0 01          	add    $0x1,%rax
+ 132:	48 39 45 e8          	cmp    %rax,-0x18(%rbp)
+ 136:	74 09                	je     141 <sgx_ecall_pointer_string+0x141>
+ 138:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%rbp)
+ 13f:	eb 5f                	jmp    1a0 <sgx_ecall_pointer_string+0x1a0>
+ 141:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 145:	48 89 c7             	mov    %rax,%rdi
+ 148:	e8 00 00 00 00       	call   14d <sgx_ecall_pointer_string+0x14d>
+ 14d:	48 83 7d d0 00       	cmpq   $0x0,-0x30(%rbp)
+ 152:	74 4b                	je     19f <sgx_ecall_pointer_string+0x19f>
+ 154:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 158:	48 8d 50 ff          	lea    -0x1(%rax),%rdx
+ 15c:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 160:	48 01 d0             	add    %rdx,%rax
+ 163:	c6 00 00             	movb   $0x0,(%rax)
+ 166:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 16a:	48 89 c7             	mov    %rax,%rdi
+ 16d:	e8 00 00 00 00       	call   172 <sgx_ecall_pointer_string+0x172>
+ 172:	48 83 c0 01          	add    $0x1,%rax
+ 176:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+ 17a:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 17e:	48 8b 55 d0          	mov    -0x30(%rbp),%rdx
+ 182:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+ 186:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 18a:	48 89 c7             	mov    %rax,%rdi
+ 18d:	e8 00 00 00 00       	call   192 <sgx_ecall_pointer_string+0x192>
+ 192:	85 c0                	test   %eax,%eax
+ 194:	74 09                	je     19f <sgx_ecall_pointer_string+0x19f>
+ 196:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%rbp)
+ 19d:	eb 01                	jmp    1a0 <sgx_ecall_pointer_string+0x1a0>
+ 19f:	90                   	nop
+ 1a0:	48 83 7d d0 00       	cmpq   $0x0,-0x30(%rbp)
+ 1a5:	74 0c                	je     1b3 <sgx_ecall_pointer_string+0x1b3>
+ 1a7:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 1ab:	48 89 c7             	mov    %rax,%rdi
+ 1ae:	e8 00 00 00 00       	call   1b3 <sgx_ecall_pointer_string+0x1b3>
+ 1b3:	8b 45 cc             	mov    -0x34(%rbp),%eax
+ 1b6:	c9                   	leave
+ 1b7:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_pointer_string_const:
+
+0000000000000000 <sgx_ecall_pointer_string_const>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 50          	sub    $0x50,%rsp
+   c:	48 89 7d b8          	mov    %rdi,-0x48(%rbp)
+  10:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_pointer_string_const+0x2c>
+  17:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  1b:	be 10 00 00 00       	mov    $0x10,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_pointer_string_const+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_pointer_string_const+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 23 01 00 00       	jmp    159 <sgx_ecall_pointer_string_const+0x159>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  3d:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  41:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  45:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  49:	b9 10 00 00 00       	mov    $0x10,%ecx
+  4e:	be 10 00 00 00       	mov    $0x10,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_pointer_string_const+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_pointer_string_const+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 f0 00 00 00       	jmp    159 <sgx_ecall_pointer_string_const+0x159>
+  69:	c7 45 cc 00 00 00 00 	movl   $0x0,-0x34(%rbp)
+  70:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  74:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  78:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  7c:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  80:	48 c7 45 d0 00 00 00 	movq   $0x0,-0x30(%rbp)
+  87:	00 
+  88:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  8d:	74 21                	je     b0 <sgx_ecall_pointer_string_const+0xb0>
+  8f:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  93:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  97:	48 89 d6             	mov    %rdx,%rsi
+  9a:	48 89 c7             	mov    %rax,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <sgx_ecall_pointer_string_const+0xa2>
+  a2:	85 c0                	test   %eax,%eax
+  a4:	75 0a                	jne    b0 <sgx_ecall_pointer_string_const+0xb0>
+  a6:	b8 02 00 00 00       	mov    $0x2,%eax
+  ab:	e9 a9 00 00 00       	jmp    159 <sgx_ecall_pointer_string_const+0x159>
+  b0:	0f ae e8             	lfence
+  b3:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  b8:	74 7d                	je     137 <sgx_ecall_pointer_string_const+0x137>
+  ba:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  bf:	74 76                	je     137 <sgx_ecall_pointer_string_const+0x137>
+  c1:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  c5:	48 89 c7             	mov    %rax,%rdi
+  c8:	e8 00 00 00 00       	call   cd <sgx_ecall_pointer_string_const+0xcd>
+  cd:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+  d1:	48 83 7d d0 00       	cmpq   $0x0,-0x30(%rbp)
+  d6:	75 09                	jne    e1 <sgx_ecall_pointer_string_const+0xe1>
+  d8:	c7 45 cc 03 00 00 00 	movl   $0x3,-0x34(%rbp)
+  df:	eb 62                	jmp    143 <sgx_ecall_pointer_string_const+0x143>
+  e1:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+  e5:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+  e9:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+  ed:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  f1:	48 89 c7             	mov    %rax,%rdi
+  f4:	e8 00 00 00 00       	call   f9 <sgx_ecall_pointer_string_const+0xf9>
+  f9:	85 c0                	test   %eax,%eax
+  fb:	74 09                	je     106 <sgx_ecall_pointer_string_const+0x106>
+  fd:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%rbp)
+ 104:	eb 3d                	jmp    143 <sgx_ecall_pointer_string_const+0x143>
+ 106:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 10a:	48 8d 50 ff          	lea    -0x1(%rax),%rdx
+ 10e:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 112:	48 01 d0             	add    %rdx,%rax
+ 115:	c6 00 00             	movb   $0x0,(%rax)
+ 118:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 11c:	48 89 c7             	mov    %rax,%rdi
+ 11f:	e8 00 00 00 00       	call   124 <sgx_ecall_pointer_string_const+0x124>
+ 124:	48 83 c0 01          	add    $0x1,%rax
+ 128:	48 39 45 e8          	cmp    %rax,-0x18(%rbp)
+ 12c:	74 09                	je     137 <sgx_ecall_pointer_string_const+0x137>
+ 12e:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%rbp)
+ 135:	eb 0c                	jmp    143 <sgx_ecall_pointer_string_const+0x143>
+ 137:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 13b:	48 89 c7             	mov    %rax,%rdi
+ 13e:	e8 00 00 00 00       	call   143 <sgx_ecall_pointer_string_const+0x143>
+ 143:	48 83 7d d0 00       	cmpq   $0x0,-0x30(%rbp)
+ 148:	74 0c                	je     156 <sgx_ecall_pointer_string_const+0x156>
+ 14a:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 14e:	48 89 c7             	mov    %rax,%rdi
+ 151:	e8 00 00 00 00       	call   156 <sgx_ecall_pointer_string_const+0x156>
+ 156:	8b 45 cc             	mov    -0x34(%rbp),%eax
+ 159:	c9                   	leave
+ 15a:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_pointer_size:
+
+0000000000000000 <sgx_ecall_pointer_size>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 50          	sub    $0x50,%rsp
+   c:	48 89 7d b8          	mov    %rdi,-0x48(%rbp)
+  10:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_pointer_size+0x2c>
+  17:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  1b:	be 10 00 00 00       	mov    $0x10,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_pointer_size+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_pointer_size+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 2e 01 00 00       	jmp    164 <sgx_ecall_pointer_size+0x164>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  3d:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+  41:	48 8b 55 d0          	mov    -0x30(%rbp),%rdx
+  45:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  49:	b9 10 00 00 00       	mov    $0x10,%ecx
+  4e:	be 10 00 00 00       	mov    $0x10,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_pointer_size+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_pointer_size+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 fb 00 00 00       	jmp    164 <sgx_ecall_pointer_size+0x164>
+  69:	c7 45 c4 00 00 00 00 	movl   $0x0,-0x3c(%rbp)
+  70:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  74:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  78:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  7c:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  80:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  84:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  88:	48 c7 45 c8 00 00 00 	movq   $0x0,-0x38(%rbp)
+  8f:	00 
+  90:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  95:	74 21                	je     b8 <sgx_ecall_pointer_size+0xb8>
+  97:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  9b:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  9f:	48 89 d6             	mov    %rdx,%rsi
+  a2:	48 89 c7             	mov    %rax,%rdi
+  a5:	e8 00 00 00 00       	call   aa <sgx_ecall_pointer_size+0xaa>
+  aa:	85 c0                	test   %eax,%eax
+  ac:	75 0a                	jne    b8 <sgx_ecall_pointer_size+0xb8>
+  ae:	b8 02 00 00 00       	mov    $0x2,%eax
+  b3:	e9 ac 00 00 00       	jmp    164 <sgx_ecall_pointer_size+0x164>
+  b8:	0f ae e8             	lfence
+  bb:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  c0:	74 4c                	je     10e <sgx_ecall_pointer_size+0x10e>
+  c2:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  c7:	74 45                	je     10e <sgx_ecall_pointer_size+0x10e>
+  c9:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  cd:	48 89 c7             	mov    %rax,%rdi
+  d0:	e8 00 00 00 00       	call   d5 <sgx_ecall_pointer_size+0xd5>
+  d5:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+  d9:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  de:	75 09                	jne    e9 <sgx_ecall_pointer_size+0xe9>
+  e0:	c7 45 c4 03 00 00 00 	movl   $0x3,-0x3c(%rbp)
+  e7:	eb 65                	jmp    14e <sgx_ecall_pointer_size+0x14e>
+  e9:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+  ed:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  f1:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+  f5:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  f9:	48 89 c7             	mov    %rax,%rdi
+  fc:	e8 00 00 00 00       	call   101 <sgx_ecall_pointer_size+0x101>
+ 101:	85 c0                	test   %eax,%eax
+ 103:	74 09                	je     10e <sgx_ecall_pointer_size+0x10e>
+ 105:	c7 45 c4 01 00 00 00 	movl   $0x1,-0x3c(%rbp)
+ 10c:	eb 40                	jmp    14e <sgx_ecall_pointer_size+0x14e>
+ 10e:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 112:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 116:	48 89 d6             	mov    %rdx,%rsi
+ 119:	48 89 c7             	mov    %rax,%rdi
+ 11c:	e8 00 00 00 00       	call   121 <sgx_ecall_pointer_size+0x121>
+ 121:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 126:	74 25                	je     14d <sgx_ecall_pointer_size+0x14d>
+ 128:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 12c:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+ 130:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+ 134:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 138:	48 89 c7             	mov    %rax,%rdi
+ 13b:	e8 00 00 00 00       	call   140 <sgx_ecall_pointer_size+0x140>
+ 140:	85 c0                	test   %eax,%eax
+ 142:	74 09                	je     14d <sgx_ecall_pointer_size+0x14d>
+ 144:	c7 45 c4 01 00 00 00 	movl   $0x1,-0x3c(%rbp)
+ 14b:	eb 01                	jmp    14e <sgx_ecall_pointer_size+0x14e>
+ 14d:	90                   	nop
+ 14e:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 153:	74 0c                	je     161 <sgx_ecall_pointer_size+0x161>
+ 155:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 159:	48 89 c7             	mov    %rax,%rdi
+ 15c:	e8 00 00 00 00       	call   161 <sgx_ecall_pointer_size+0x161>
+ 161:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+ 164:	c9                   	leave
+ 165:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_pointer_count:
+
+0000000000000000 <sgx_ecall_pointer_count>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 50          	sub    $0x50,%rsp
+   c:	48 89 7d b8          	mov    %rdi,-0x48(%rbp)
+  10:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_pointer_count+0x2c>
+  17:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  1b:	be 10 00 00 00       	mov    $0x10,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_pointer_count+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_pointer_count+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 64 01 00 00       	jmp    19a <sgx_ecall_pointer_count+0x19a>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  3d:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+  41:	48 8b 55 d0          	mov    -0x30(%rbp),%rdx
+  45:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  49:	b9 10 00 00 00       	mov    $0x10,%ecx
+  4e:	be 10 00 00 00       	mov    $0x10,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_pointer_count+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_pointer_count+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 31 01 00 00       	jmp    19a <sgx_ecall_pointer_count+0x19a>
+  69:	c7 45 c4 00 00 00 00 	movl   $0x0,-0x3c(%rbp)
+  70:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  74:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  78:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  7c:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  80:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  84:	48 c1 e0 02          	shl    $0x2,%rax
+  88:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  8c:	48 c7 45 c8 00 00 00 	movq   $0x0,-0x38(%rbp)
+  93:	00 
+  94:	48 b8 ff ff ff ff ff 	movabs $0x3fffffffffffffff,%rax
+  9b:	ff ff 3f 
+  9e:	48 3b 45 e0          	cmp    -0x20(%rbp),%rax
+  a2:	73 0a                	jae    ae <sgx_ecall_pointer_count+0xae>
+  a4:	b8 02 00 00 00       	mov    $0x2,%eax
+  a9:	e9 ec 00 00 00       	jmp    19a <sgx_ecall_pointer_count+0x19a>
+  ae:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  b3:	74 21                	je     d6 <sgx_ecall_pointer_count+0xd6>
+  b5:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  b9:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  bd:	48 89 d6             	mov    %rdx,%rsi
+  c0:	48 89 c7             	mov    %rax,%rdi
+  c3:	e8 00 00 00 00       	call   c8 <sgx_ecall_pointer_count+0xc8>
+  c8:	85 c0                	test   %eax,%eax
+  ca:	75 0a                	jne    d6 <sgx_ecall_pointer_count+0xd6>
+  cc:	b8 02 00 00 00       	mov    $0x2,%eax
+  d1:	e9 c4 00 00 00       	jmp    19a <sgx_ecall_pointer_count+0x19a>
+  d6:	0f ae e8             	lfence
+  d9:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  de:	74 64                	je     144 <sgx_ecall_pointer_count+0x144>
+  e0:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  e5:	74 5d                	je     144 <sgx_ecall_pointer_count+0x144>
+  e7:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  eb:	83 e0 03             	and    $0x3,%eax
+  ee:	48 85 c0             	test   %rax,%rax
+  f1:	74 0c                	je     ff <sgx_ecall_pointer_count+0xff>
+  f3:	c7 45 c4 02 00 00 00 	movl   $0x2,-0x3c(%rbp)
+  fa:	e9 85 00 00 00       	jmp    184 <sgx_ecall_pointer_count+0x184>
+  ff:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 103:	48 89 c7             	mov    %rax,%rdi
+ 106:	e8 00 00 00 00       	call   10b <sgx_ecall_pointer_count+0x10b>
+ 10b:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+ 10f:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 114:	75 09                	jne    11f <sgx_ecall_pointer_count+0x11f>
+ 116:	c7 45 c4 03 00 00 00 	movl   $0x3,-0x3c(%rbp)
+ 11d:	eb 65                	jmp    184 <sgx_ecall_pointer_count+0x184>
+ 11f:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 123:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+ 127:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+ 12b:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 12f:	48 89 c7             	mov    %rax,%rdi
+ 132:	e8 00 00 00 00       	call   137 <sgx_ecall_pointer_count+0x137>
+ 137:	85 c0                	test   %eax,%eax
+ 139:	74 09                	je     144 <sgx_ecall_pointer_count+0x144>
+ 13b:	c7 45 c4 01 00 00 00 	movl   $0x1,-0x3c(%rbp)
+ 142:	eb 40                	jmp    184 <sgx_ecall_pointer_count+0x184>
+ 144:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 148:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 14c:	48 89 d6             	mov    %rdx,%rsi
+ 14f:	48 89 c7             	mov    %rax,%rdi
+ 152:	e8 00 00 00 00       	call   157 <sgx_ecall_pointer_count+0x157>
+ 157:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 15c:	74 25                	je     183 <sgx_ecall_pointer_count+0x183>
+ 15e:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 162:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+ 166:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+ 16a:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 16e:	48 89 c7             	mov    %rax,%rdi
+ 171:	e8 00 00 00 00       	call   176 <sgx_ecall_pointer_count+0x176>
+ 176:	85 c0                	test   %eax,%eax
+ 178:	74 09                	je     183 <sgx_ecall_pointer_count+0x183>
+ 17a:	c7 45 c4 01 00 00 00 	movl   $0x1,-0x3c(%rbp)
+ 181:	eb 01                	jmp    184 <sgx_ecall_pointer_count+0x184>
+ 183:	90                   	nop
+ 184:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 189:	74 0c                	je     197 <sgx_ecall_pointer_count+0x197>
+ 18b:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 18f:	48 89 c7             	mov    %rax,%rdi
+ 192:	e8 00 00 00 00       	call   197 <sgx_ecall_pointer_count+0x197>
+ 197:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+ 19a:	c9                   	leave
+ 19b:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_pointer_isptr_readonly:
+
+0000000000000000 <sgx_ecall_pointer_isptr_readonly>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 50          	sub    $0x50,%rsp
+   c:	48 89 7d b8          	mov    %rdi,-0x48(%rbp)
+  10:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_pointer_isptr_readonly+0x2c>
+  17:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  1b:	be 10 00 00 00       	mov    $0x10,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_pointer_isptr_readonly+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_pointer_isptr_readonly+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 fe 00 00 00       	jmp    134 <sgx_ecall_pointer_isptr_readonly+0x134>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  3d:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+  41:	48 8b 55 d0          	mov    -0x30(%rbp),%rdx
+  45:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  49:	b9 10 00 00 00       	mov    $0x10,%ecx
+  4e:	be 10 00 00 00       	mov    $0x10,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_pointer_isptr_readonly+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_pointer_isptr_readonly+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 cb 00 00 00       	jmp    134 <sgx_ecall_pointer_isptr_readonly+0x134>
+  69:	c7 45 c4 00 00 00 00 	movl   $0x0,-0x3c(%rbp)
+  70:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  74:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  78:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  7c:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  80:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  84:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  88:	48 c7 45 c8 00 00 00 	movq   $0x0,-0x38(%rbp)
+  8f:	00 
+  90:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  95:	74 1e                	je     b5 <sgx_ecall_pointer_isptr_readonly+0xb5>
+  97:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  9b:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  9f:	48 89 d6             	mov    %rdx,%rsi
+  a2:	48 89 c7             	mov    %rax,%rdi
+  a5:	e8 00 00 00 00       	call   aa <sgx_ecall_pointer_isptr_readonly+0xaa>
+  aa:	85 c0                	test   %eax,%eax
+  ac:	75 07                	jne    b5 <sgx_ecall_pointer_isptr_readonly+0xb5>
+  ae:	b8 02 00 00 00       	mov    $0x2,%eax
+  b3:	eb 7f                	jmp    134 <sgx_ecall_pointer_isptr_readonly+0x134>
+  b5:	0f ae e8             	lfence
+  b8:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  bd:	74 4c                	je     10b <sgx_ecall_pointer_isptr_readonly+0x10b>
+  bf:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  c4:	74 45                	je     10b <sgx_ecall_pointer_isptr_readonly+0x10b>
+  c6:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  ca:	48 89 c7             	mov    %rax,%rdi
+  cd:	e8 00 00 00 00       	call   d2 <sgx_ecall_pointer_isptr_readonly+0xd2>
+  d2:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+  d6:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  db:	75 09                	jne    e6 <sgx_ecall_pointer_isptr_readonly+0xe6>
+  dd:	c7 45 c4 03 00 00 00 	movl   $0x3,-0x3c(%rbp)
+  e4:	eb 38                	jmp    11e <sgx_ecall_pointer_isptr_readonly+0x11e>
+  e6:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+  ea:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  ee:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+  f2:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  f6:	48 89 c7             	mov    %rax,%rdi
+  f9:	e8 00 00 00 00       	call   fe <sgx_ecall_pointer_isptr_readonly+0xfe>
+  fe:	85 c0                	test   %eax,%eax
+ 100:	74 09                	je     10b <sgx_ecall_pointer_isptr_readonly+0x10b>
+ 102:	c7 45 c4 01 00 00 00 	movl   $0x1,-0x3c(%rbp)
+ 109:	eb 13                	jmp    11e <sgx_ecall_pointer_isptr_readonly+0x11e>
+ 10b:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 10f:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 113:	48 89 d6             	mov    %rdx,%rsi
+ 116:	48 89 c7             	mov    %rax,%rdi
+ 119:	e8 00 00 00 00       	call   11e <sgx_ecall_pointer_isptr_readonly+0x11e>
+ 11e:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 123:	74 0c                	je     131 <sgx_ecall_pointer_isptr_readonly+0x131>
+ 125:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 129:	48 89 c7             	mov    %rax,%rdi
+ 12c:	e8 00 00 00 00       	call   131 <sgx_ecall_pointer_isptr_readonly+0x131>
+ 131:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+ 134:	c9                   	leave
+ 135:	c3                   	ret
+
+Disassembly of section .text.sgx_ocall_pointer_attr:
+
+0000000000000000 <sgx_ocall_pointer_attr>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  17:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  1c:	74 07                	je     25 <sgx_ocall_pointer_attr+0x25>
+  1e:	b8 02 00 00 00       	mov    $0x2,%eax
+  23:	eb 08                	jmp    2d <sgx_ocall_pointer_attr+0x2d>
+  25:	e8 00 00 00 00       	call   2a <sgx_ocall_pointer_attr+0x2a>
+  2a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  2d:	c9                   	leave
+  2e:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_array_user_check:
+
+0000000000000000 <sgx_ecall_array_user_check>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_array_user_check+0x2c>
+  17:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_array_user_check+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_array_user_check+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 4e                	jmp    81 <sgx_ecall_array_user_check+0x81>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  3a:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  3e:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  42:	48 8d 45 e8          	lea    -0x18(%rbp),%rax
+  46:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4b:	be 08 00 00 00       	mov    $0x8,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_array_user_check+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_array_user_check+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 1e                	jmp    81 <sgx_ecall_array_user_check+0x81>
+  63:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+  6a:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  6e:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  72:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  76:	48 89 c7             	mov    %rax,%rdi
+  79:	e8 00 00 00 00       	call   7e <sgx_ecall_array_user_check+0x7e>
+  7e:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  81:	c9                   	leave
+  82:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_array_in:
+
+0000000000000000 <sgx_ecall_array_in>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_array_in+0x2c>
+  17:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_array_in+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_array_in+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 07 01 00 00       	jmp    13d <sgx_ecall_array_in+0x13d>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  3d:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  41:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  45:	48 8d 45 d8          	lea    -0x28(%rbp),%rax
+  49:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4e:	be 08 00 00 00       	mov    $0x8,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_array_in+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_array_in+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 d4 00 00 00       	jmp    13d <sgx_ecall_array_in+0x13d>
+  69:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%rbp)
+  70:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  74:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  78:	48 c7 45 f8 10 00 00 	movq   $0x10,-0x8(%rbp)
+  7f:	00 
+  80:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  87:	00 
+  88:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  8d:	74 21                	je     b0 <sgx_ecall_array_in+0xb0>
+  8f:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  93:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  97:	48 89 d6             	mov    %rdx,%rsi
+  9a:	48 89 c7             	mov    %rax,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <sgx_ecall_array_in+0xa2>
+  a2:	85 c0                	test   %eax,%eax
+  a4:	75 0a                	jne    b0 <sgx_ecall_array_in+0xb0>
+  a6:	b8 02 00 00 00       	mov    $0x2,%eax
+  ab:	e9 8d 00 00 00       	jmp    13d <sgx_ecall_array_in+0x13d>
+  b0:	0f ae e8             	lfence
+  b3:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  b8:	74 61                	je     11b <sgx_ecall_array_in+0x11b>
+  ba:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  bf:	74 5a                	je     11b <sgx_ecall_array_in+0x11b>
+  c1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  c5:	83 e0 03             	and    $0x3,%eax
+  c8:	48 85 c0             	test   %rax,%rax
+  cb:	74 09                	je     d6 <sgx_ecall_array_in+0xd6>
+  cd:	c7 45 d4 02 00 00 00 	movl   $0x2,-0x2c(%rbp)
+  d4:	eb 51                	jmp    127 <sgx_ecall_array_in+0x127>
+  d6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  da:	48 89 c7             	mov    %rax,%rdi
+  dd:	e8 00 00 00 00       	call   e2 <sgx_ecall_array_in+0xe2>
+  e2:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  e6:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  eb:	75 09                	jne    f6 <sgx_ecall_array_in+0xf6>
+  ed:	c7 45 d4 03 00 00 00 	movl   $0x3,-0x2c(%rbp)
+  f4:	eb 31                	jmp    127 <sgx_ecall_array_in+0x127>
+  f6:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+  fa:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  fe:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 102:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 106:	48 89 c7             	mov    %rax,%rdi
+ 109:	e8 00 00 00 00       	call   10e <sgx_ecall_array_in+0x10e>
+ 10e:	85 c0                	test   %eax,%eax
+ 110:	74 09                	je     11b <sgx_ecall_array_in+0x11b>
+ 112:	c7 45 d4 01 00 00 00 	movl   $0x1,-0x2c(%rbp)
+ 119:	eb 0c                	jmp    127 <sgx_ecall_array_in+0x127>
+ 11b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 11f:	48 89 c7             	mov    %rax,%rdi
+ 122:	e8 00 00 00 00       	call   127 <sgx_ecall_array_in+0x127>
+ 127:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 12c:	74 0c                	je     13a <sgx_ecall_array_in+0x13a>
+ 12e:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 132:	48 89 c7             	mov    %rax,%rdi
+ 135:	e8 00 00 00 00       	call   13a <sgx_ecall_array_in+0x13a>
+ 13a:	8b 45 d4             	mov    -0x2c(%rbp),%eax
+ 13d:	c9                   	leave
+ 13e:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_array_out:
+
+0000000000000000 <sgx_ecall_array_out>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_array_out+0x2c>
+  17:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_array_out+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_array_out+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 24 01 00 00       	jmp    15a <sgx_ecall_array_out+0x15a>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  3d:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  41:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  45:	48 8d 45 d8          	lea    -0x28(%rbp),%rax
+  49:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4e:	be 08 00 00 00       	mov    $0x8,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_array_out+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_array_out+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 f1 00 00 00       	jmp    15a <sgx_ecall_array_out+0x15a>
+  69:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%rbp)
+  70:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  74:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  78:	48 c7 45 f8 10 00 00 	movq   $0x10,-0x8(%rbp)
+  7f:	00 
+  80:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  87:	00 
+  88:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  8d:	74 21                	je     b0 <sgx_ecall_array_out+0xb0>
+  8f:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  93:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  97:	48 89 d6             	mov    %rdx,%rsi
+  9a:	48 89 c7             	mov    %rax,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <sgx_ecall_array_out+0xa2>
+  a2:	85 c0                	test   %eax,%eax
+  a4:	75 0a                	jne    b0 <sgx_ecall_array_out+0xb0>
+  a6:	b8 02 00 00 00       	mov    $0x2,%eax
+  ab:	e9 aa 00 00 00       	jmp    15a <sgx_ecall_array_out+0x15a>
+  b0:	0f ae e8             	lfence
+  b3:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  b8:	74 51                	je     10b <sgx_ecall_array_out+0x10b>
+  ba:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  bf:	74 4a                	je     10b <sgx_ecall_array_out+0x10b>
+  c1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  c5:	83 e0 03             	and    $0x3,%eax
+  c8:	48 85 c0             	test   %rax,%rax
+  cb:	74 09                	je     d6 <sgx_ecall_array_out+0xd6>
+  cd:	c7 45 d4 02 00 00 00 	movl   $0x2,-0x2c(%rbp)
+  d4:	eb 6e                	jmp    144 <sgx_ecall_array_out+0x144>
+  d6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  da:	48 89 c7             	mov    %rax,%rdi
+  dd:	e8 00 00 00 00       	call   e2 <sgx_ecall_array_out+0xe2>
+  e2:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  e6:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  eb:	75 09                	jne    f6 <sgx_ecall_array_out+0xf6>
+  ed:	c7 45 d4 03 00 00 00 	movl   $0x3,-0x2c(%rbp)
+  f4:	eb 4e                	jmp    144 <sgx_ecall_array_out+0x144>
+  f6:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  fa:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  fe:	be 00 00 00 00       	mov    $0x0,%esi
+ 103:	48 89 c7             	mov    %rax,%rdi
+ 106:	e8 00 00 00 00       	call   10b <sgx_ecall_array_out+0x10b>
+ 10b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 10f:	48 89 c7             	mov    %rax,%rdi
+ 112:	e8 00 00 00 00       	call   117 <sgx_ecall_array_out+0x117>
+ 117:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 11c:	74 25                	je     143 <sgx_ecall_array_out+0x143>
+ 11e:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+ 122:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 126:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 12a:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 12e:	48 89 c7             	mov    %rax,%rdi
+ 131:	e8 00 00 00 00       	call   136 <sgx_ecall_array_out+0x136>
+ 136:	85 c0                	test   %eax,%eax
+ 138:	74 09                	je     143 <sgx_ecall_array_out+0x143>
+ 13a:	c7 45 d4 01 00 00 00 	movl   $0x1,-0x2c(%rbp)
+ 141:	eb 01                	jmp    144 <sgx_ecall_array_out+0x144>
+ 143:	90                   	nop
+ 144:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 149:	74 0c                	je     157 <sgx_ecall_array_out+0x157>
+ 14b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 14f:	48 89 c7             	mov    %rax,%rdi
+ 152:	e8 00 00 00 00       	call   157 <sgx_ecall_array_out+0x157>
+ 157:	8b 45 d4             	mov    -0x2c(%rbp),%eax
+ 15a:	c9                   	leave
+ 15b:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_array_in_out:
+
+0000000000000000 <sgx_ecall_array_in_out>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_array_in_out+0x2c>
+  17:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_array_in_out+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_array_in_out+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 34 01 00 00       	jmp    16a <sgx_ecall_array_in_out+0x16a>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  3d:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  41:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  45:	48 8d 45 d8          	lea    -0x28(%rbp),%rax
+  49:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4e:	be 08 00 00 00       	mov    $0x8,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_array_in_out+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_array_in_out+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 01 01 00 00       	jmp    16a <sgx_ecall_array_in_out+0x16a>
+  69:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%rbp)
+  70:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  74:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  78:	48 c7 45 f8 10 00 00 	movq   $0x10,-0x8(%rbp)
+  7f:	00 
+  80:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  87:	00 
+  88:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  8d:	74 21                	je     b0 <sgx_ecall_array_in_out+0xb0>
+  8f:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  93:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  97:	48 89 d6             	mov    %rdx,%rsi
+  9a:	48 89 c7             	mov    %rax,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <sgx_ecall_array_in_out+0xa2>
+  a2:	85 c0                	test   %eax,%eax
+  a4:	75 0a                	jne    b0 <sgx_ecall_array_in_out+0xb0>
+  a6:	b8 02 00 00 00       	mov    $0x2,%eax
+  ab:	e9 ba 00 00 00       	jmp    16a <sgx_ecall_array_in_out+0x16a>
+  b0:	0f ae e8             	lfence
+  b3:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  b8:	74 61                	je     11b <sgx_ecall_array_in_out+0x11b>
+  ba:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  bf:	74 5a                	je     11b <sgx_ecall_array_in_out+0x11b>
+  c1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  c5:	83 e0 03             	and    $0x3,%eax
+  c8:	48 85 c0             	test   %rax,%rax
+  cb:	74 09                	je     d6 <sgx_ecall_array_in_out+0xd6>
+  cd:	c7 45 d4 02 00 00 00 	movl   $0x2,-0x2c(%rbp)
+  d4:	eb 7e                	jmp    154 <sgx_ecall_array_in_out+0x154>
+  d6:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  da:	48 89 c7             	mov    %rax,%rdi
+  dd:	e8 00 00 00 00       	call   e2 <sgx_ecall_array_in_out+0xe2>
+  e2:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  e6:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  eb:	75 09                	jne    f6 <sgx_ecall_array_in_out+0xf6>
+  ed:	c7 45 d4 03 00 00 00 	movl   $0x3,-0x2c(%rbp)
+  f4:	eb 5e                	jmp    154 <sgx_ecall_array_in_out+0x154>
+  f6:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+  fa:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+  fe:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 102:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 106:	48 89 c7             	mov    %rax,%rdi
+ 109:	e8 00 00 00 00       	call   10e <sgx_ecall_array_in_out+0x10e>
+ 10e:	85 c0                	test   %eax,%eax
+ 110:	74 09                	je     11b <sgx_ecall_array_in_out+0x11b>
+ 112:	c7 45 d4 01 00 00 00 	movl   $0x1,-0x2c(%rbp)
+ 119:	eb 39                	jmp    154 <sgx_ecall_array_in_out+0x154>
+ 11b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 11f:	48 89 c7             	mov    %rax,%rdi
+ 122:	e8 00 00 00 00       	call   127 <sgx_ecall_array_in_out+0x127>
+ 127:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 12c:	74 25                	je     153 <sgx_ecall_array_in_out+0x153>
+ 12e:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+ 132:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 136:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 13a:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 13e:	48 89 c7             	mov    %rax,%rdi
+ 141:	e8 00 00 00 00       	call   146 <sgx_ecall_array_in_out+0x146>
+ 146:	85 c0                	test   %eax,%eax
+ 148:	74 09                	je     153 <sgx_ecall_array_in_out+0x153>
+ 14a:	c7 45 d4 01 00 00 00 	movl   $0x1,-0x2c(%rbp)
+ 151:	eb 01                	jmp    154 <sgx_ecall_array_in_out+0x154>
+ 153:	90                   	nop
+ 154:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+ 159:	74 0c                	je     167 <sgx_ecall_array_in_out+0x167>
+ 15b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 15f:	48 89 c7             	mov    %rax,%rdi
+ 162:	e8 00 00 00 00       	call   167 <sgx_ecall_array_in_out+0x167>
+ 167:	8b 45 d4             	mov    -0x2c(%rbp),%eax
+ 16a:	c9                   	leave
+ 16b:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_array_isary:
+
+0000000000000000 <sgx_ecall_array_isary>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_array_isary+0x2c>
+  17:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_array_isary+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_array_isary+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 46                	jmp    79 <sgx_ecall_array_isary+0x79>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  3a:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  42:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  46:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4b:	be 08 00 00 00       	mov    $0x8,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_array_isary+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_array_isary+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 16                	jmp    79 <sgx_ecall_array_isary+0x79>
+  63:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%rbp)
+  6a:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  6e:	48 89 c7             	mov    %rax,%rdi
+  71:	e8 00 00 00 00       	call   76 <sgx_ecall_array_isary+0x76>
+  76:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  79:	c9                   	leave
+  7a:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_function_public:
+
+0000000000000000 <sgx_ecall_function_public>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  17:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  1c:	74 07                	je     25 <sgx_ecall_function_public+0x25>
+  1e:	b8 02 00 00 00       	mov    $0x2,%eax
+  23:	eb 08                	jmp    2d <sgx_ecall_function_public+0x2d>
+  25:	e8 00 00 00 00       	call   2a <sgx_ecall_function_public+0x2a>
+  2a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  2d:	c9                   	leave
+  2e:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_function_private:
+
+0000000000000000 <sgx_ecall_function_private>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_function_private+0x2c>
+  17:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  1b:	be 04 00 00 00       	mov    $0x4,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_function_private+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_function_private+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 6a                	jmp    9d <sgx_ecall_function_private+0x9d>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  3a:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  42:	48 8d 45 ec          	lea    -0x14(%rbp),%rax
+  46:	b9 04 00 00 00       	mov    $0x4,%ecx
+  4b:	be 04 00 00 00       	mov    $0x4,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_function_private+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_function_private+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 3a                	jmp    9d <sgx_ecall_function_private+0x9d>
+  63:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%rbp)
+  6a:	e8 00 00 00 00       	call   6f <sgx_ecall_function_private+0x6f>
+  6f:	89 45 f0             	mov    %eax,-0x10(%rbp)
+  72:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  76:	48 8d 55 f0          	lea    -0x10(%rbp),%rdx
+  7a:	b9 04 00 00 00       	mov    $0x4,%ecx
+  7f:	be 04 00 00 00       	mov    $0x4,%esi
+  84:	48 89 c7             	mov    %rax,%rdi
+  87:	e8 00 00 00 00       	call   8c <sgx_ecall_function_private+0x8c>
+  8c:	85 c0                	test   %eax,%eax
+  8e:	74 09                	je     99 <sgx_ecall_function_private+0x99>
+  90:	c7 45 f4 01 00 00 00 	movl   $0x1,-0xc(%rbp)
+  97:	eb 01                	jmp    9a <sgx_ecall_function_private+0x9a>
+  99:	90                   	nop
+  9a:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  9d:	c9                   	leave
+  9e:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_malloc_free:
+
+0000000000000000 <sgx_ecall_malloc_free>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  17:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  1c:	74 07                	je     25 <sgx_ecall_malloc_free+0x25>
+  1e:	b8 02 00 00 00       	mov    $0x2,%eax
+  23:	eb 08                	jmp    2d <sgx_ecall_malloc_free+0x2d>
+  25:	e8 00 00 00 00       	call   2a <sgx_ecall_malloc_free+0x2a>
+  2a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  2d:	c9                   	leave
+  2e:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_sgx_cpuid:
+
+0000000000000000 <sgx_ecall_sgx_cpuid>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 50          	sub    $0x50,%rsp
+   c:	48 89 7d b8          	mov    %rdi,-0x48(%rbp)
+  10:	48 83 7d b8 00       	cmpq   $0x0,-0x48(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_sgx_cpuid+0x2c>
+  17:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  1b:	be 10 00 00 00       	mov    $0x10,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_sgx_cpuid+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 0a                	jne    36 <sgx_ecall_sgx_cpuid+0x36>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	e9 29 01 00 00       	jmp    15f <sgx_ecall_sgx_cpuid+0x15f>
+  36:	0f ae e8             	lfence
+  39:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  3d:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  41:	48 8b 55 d8          	mov    -0x28(%rbp),%rdx
+  45:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+  49:	b9 10 00 00 00       	mov    $0x10,%ecx
+  4e:	be 10 00 00 00       	mov    $0x10,%esi
+  53:	48 89 c7             	mov    %rax,%rdi
+  56:	e8 00 00 00 00       	call   5b <sgx_ecall_sgx_cpuid+0x5b>
+  5b:	85 c0                	test   %eax,%eax
+  5d:	74 0a                	je     69 <sgx_ecall_sgx_cpuid+0x69>
+  5f:	b8 01 00 00 00       	mov    $0x1,%eax
+  64:	e9 f6 00 00 00       	jmp    15f <sgx_ecall_sgx_cpuid+0x15f>
+  69:	c7 45 cc 00 00 00 00 	movl   $0x0,-0x34(%rbp)
+  70:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  74:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  78:	48 c7 45 e8 10 00 00 	movq   $0x10,-0x18(%rbp)
+  7f:	00 
+  80:	48 c7 45 d0 00 00 00 	movq   $0x0,-0x30(%rbp)
+  87:	00 
+  88:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  8d:	74 21                	je     b0 <sgx_ecall_sgx_cpuid+0xb0>
+  8f:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  93:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  97:	48 89 d6             	mov    %rdx,%rsi
+  9a:	48 89 c7             	mov    %rax,%rdi
+  9d:	e8 00 00 00 00       	call   a2 <sgx_ecall_sgx_cpuid+0xa2>
+  a2:	85 c0                	test   %eax,%eax
+  a4:	75 0a                	jne    b0 <sgx_ecall_sgx_cpuid+0xb0>
+  a6:	b8 02 00 00 00       	mov    $0x2,%eax
+  ab:	e9 af 00 00 00       	jmp    15f <sgx_ecall_sgx_cpuid+0x15f>
+  b0:	0f ae e8             	lfence
+  b3:	48 83 7d e0 00       	cmpq   $0x0,-0x20(%rbp)
+  b8:	74 51                	je     10b <sgx_ecall_sgx_cpuid+0x10b>
+  ba:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  bf:	74 4a                	je     10b <sgx_ecall_sgx_cpuid+0x10b>
+  c1:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  c5:	83 e0 03             	and    $0x3,%eax
+  c8:	48 85 c0             	test   %rax,%rax
+  cb:	74 09                	je     d6 <sgx_ecall_sgx_cpuid+0xd6>
+  cd:	c7 45 cc 02 00 00 00 	movl   $0x2,-0x34(%rbp)
+  d4:	eb 73                	jmp    149 <sgx_ecall_sgx_cpuid+0x149>
+  d6:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  da:	48 89 c7             	mov    %rax,%rdi
+  dd:	e8 00 00 00 00       	call   e2 <sgx_ecall_sgx_cpuid+0xe2>
+  e2:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+  e6:	48 83 7d d0 00       	cmpq   $0x0,-0x30(%rbp)
+  eb:	75 09                	jne    f6 <sgx_ecall_sgx_cpuid+0xf6>
+  ed:	c7 45 cc 03 00 00 00 	movl   $0x3,-0x34(%rbp)
+  f4:	eb 53                	jmp    149 <sgx_ecall_sgx_cpuid+0x149>
+  f6:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  fa:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+  fe:	be 00 00 00 00       	mov    $0x0,%esi
+ 103:	48 89 c7             	mov    %rax,%rdi
+ 106:	e8 00 00 00 00       	call   10b <sgx_ecall_sgx_cpuid+0x10b>
+ 10b:	8b 55 f8             	mov    -0x8(%rbp),%edx
+ 10e:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 112:	89 d6                	mov    %edx,%esi
+ 114:	48 89 c7             	mov    %rax,%rdi
+ 117:	e8 00 00 00 00       	call   11c <sgx_ecall_sgx_cpuid+0x11c>
+ 11c:	48 83 7d d0 00       	cmpq   $0x0,-0x30(%rbp)
+ 121:	74 25                	je     148 <sgx_ecall_sgx_cpuid+0x148>
+ 123:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 127:	48 8b 55 d0          	mov    -0x30(%rbp),%rdx
+ 12b:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+ 12f:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 133:	48 89 c7             	mov    %rax,%rdi
+ 136:	e8 00 00 00 00       	call   13b <sgx_ecall_sgx_cpuid+0x13b>
+ 13b:	85 c0                	test   %eax,%eax
+ 13d:	74 09                	je     148 <sgx_ecall_sgx_cpuid+0x148>
+ 13f:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%rbp)
+ 146:	eb 01                	jmp    149 <sgx_ecall_sgx_cpuid+0x149>
+ 148:	90                   	nop
+ 149:	48 83 7d d0 00       	cmpq   $0x0,-0x30(%rbp)
+ 14e:	74 0c                	je     15c <sgx_ecall_sgx_cpuid+0x15c>
+ 150:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 154:	48 89 c7             	mov    %rax,%rdi
+ 157:	e8 00 00 00 00       	call   15c <sgx_ecall_sgx_cpuid+0x15c>
+ 15c:	8b 45 cc             	mov    -0x34(%rbp),%eax
+ 15f:	c9                   	leave
+ 160:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_exception:
+
+0000000000000000 <sgx_ecall_exception>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  17:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  1c:	74 07                	je     25 <sgx_ecall_exception+0x25>
+  1e:	b8 02 00 00 00       	mov    $0x2,%eax
+  23:	eb 08                	jmp    2d <sgx_ecall_exception+0x2d>
+  25:	e8 00 00 00 00       	call   2a <sgx_ecall_exception+0x2a>
+  2a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  2d:	c9                   	leave
+  2e:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_map:
+
+0000000000000000 <sgx_ecall_map>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  17:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  1c:	74 07                	je     25 <sgx_ecall_map+0x25>
+  1e:	b8 02 00 00 00       	mov    $0x2,%eax
+  23:	eb 08                	jmp    2d <sgx_ecall_map+0x2d>
+  25:	e8 00 00 00 00       	call   2a <sgx_ecall_map+0x2a>
+  2a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  2d:	c9                   	leave
+  2e:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_increase_counter:
+
+0000000000000000 <sgx_ecall_increase_counter>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  15:	74 15                	je     2c <sgx_ecall_increase_counter+0x2c>
+  17:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  1b:	be 08 00 00 00       	mov    $0x8,%esi
+  20:	48 89 c7             	mov    %rax,%rdi
+  23:	e8 00 00 00 00       	call   28 <sgx_ecall_increase_counter+0x28>
+  28:	85 c0                	test   %eax,%eax
+  2a:	75 07                	jne    33 <sgx_ecall_increase_counter+0x33>
+  2c:	b8 02 00 00 00       	mov    $0x2,%eax
+  31:	eb 6b                	jmp    9e <sgx_ecall_increase_counter+0x9e>
+  33:	0f ae e8             	lfence
+  36:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  3a:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3e:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  42:	48 8d 45 e8          	lea    -0x18(%rbp),%rax
+  46:	b9 08 00 00 00       	mov    $0x8,%ecx
+  4b:	be 08 00 00 00       	mov    $0x8,%esi
+  50:	48 89 c7             	mov    %rax,%rdi
+  53:	e8 00 00 00 00       	call   58 <sgx_ecall_increase_counter+0x58>
+  58:	85 c0                	test   %eax,%eax
+  5a:	74 07                	je     63 <sgx_ecall_increase_counter+0x63>
+  5c:	b8 01 00 00 00       	mov    $0x1,%eax
+  61:	eb 3b                	jmp    9e <sgx_ecall_increase_counter+0x9e>
+  63:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+  6a:	e8 00 00 00 00       	call   6f <sgx_ecall_increase_counter+0x6f>
+  6f:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  73:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  77:	48 8d 55 f0          	lea    -0x10(%rbp),%rdx
+  7b:	b9 08 00 00 00       	mov    $0x8,%ecx
+  80:	be 08 00 00 00       	mov    $0x8,%esi
+  85:	48 89 c7             	mov    %rax,%rdi
+  88:	e8 00 00 00 00       	call   8d <sgx_ecall_increase_counter+0x8d>
+  8d:	85 c0                	test   %eax,%eax
+  8f:	74 09                	je     9a <sgx_ecall_increase_counter+0x9a>
+  91:	c7 45 e4 01 00 00 00 	movl   $0x1,-0x1c(%rbp)
+  98:	eb 01                	jmp    9b <sgx_ecall_increase_counter+0x9b>
+  9a:	90                   	nop
+  9b:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  9e:	c9                   	leave
+  9f:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_producer:
+
+0000000000000000 <sgx_ecall_producer>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  17:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  1c:	74 07                	je     25 <sgx_ecall_producer+0x25>
+  1e:	b8 02 00 00 00       	mov    $0x2,%eax
+  23:	eb 08                	jmp    2d <sgx_ecall_producer+0x2d>
+  25:	e8 00 00 00 00       	call   2a <sgx_ecall_producer+0x2a>
+  2a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  2d:	c9                   	leave
+  2e:	c3                   	ret
+
+Disassembly of section .text.sgx_ecall_consumer:
+
+0000000000000000 <sgx_ecall_consumer>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 20          	sub    $0x20,%rsp
+   c:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  10:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  17:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  1c:	74 07                	je     25 <sgx_ecall_consumer+0x25>
+  1e:	b8 02 00 00 00       	mov    $0x2,%eax
+  23:	eb 08                	jmp    2d <sgx_ecall_consumer+0x2d>
+  25:	e8 00 00 00 00       	call   2a <sgx_ecall_consumer+0x2a>
+  2a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  2d:	c9                   	leave
+  2e:	c3                   	ret
+
+Disassembly of section .text.ocall_print_string:
+
+0000000000000000 <ocall_print_string>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	c7 45 dc 00 00 00 00 	movl   $0x0,-0x24(%rbp)
+  17:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  1c:	74 12                	je     30 <ocall_print_string+0x30>
+  1e:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  22:	48 89 c7             	mov    %rax,%rdi
+  25:	e8 00 00 00 00       	call   2a <ocall_print_string+0x2a>
+  2a:	48 83 c0 01          	add    $0x1,%rax
+  2e:	eb 05                	jmp    35 <ocall_print_string+0x35>
+  30:	b8 00 00 00 00       	mov    $0x0,%eax
+  35:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  39:	48 c7 45 f0 00 00 00 	movq   $0x0,-0x10(%rbp)
+  40:	00 
+  41:	48 c7 45 f8 08 00 00 	movq   $0x8,-0x8(%rbp)
+  48:	00 
+  49:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  50:	00 
+  51:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  56:	74 21                	je     79 <ocall_print_string+0x79>
+  58:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  5c:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  60:	48 89 d6             	mov    %rdx,%rsi
+  63:	48 89 c7             	mov    %rax,%rdi
+  66:	e8 00 00 00 00       	call   6b <ocall_print_string+0x6b>
+  6b:	85 c0                	test   %eax,%eax
+  6d:	75 0a                	jne    79 <ocall_print_string+0x79>
+  6f:	b8 02 00 00 00       	mov    $0x2,%eax
+  74:	e9 15 01 00 00       	jmp    18e <ocall_print_string+0x18e>
+  79:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  7e:	74 06                	je     86 <ocall_print_string+0x86>
+  80:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  84:	eb 05                	jmp    8b <ocall_print_string+0x8b>
+  86:	b8 00 00 00 00       	mov    $0x0,%eax
+  8b:	48 01 45 f8          	add    %rax,-0x8(%rbp)
+  8f:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  94:	74 06                	je     9c <ocall_print_string+0x9c>
+  96:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  9a:	eb 05                	jmp    a1 <ocall_print_string+0xa1>
+  9c:	b8 00 00 00 00       	mov    $0x0,%eax
+  a1:	48 39 45 f8          	cmp    %rax,-0x8(%rbp)
+  a5:	73 0a                	jae    b1 <ocall_print_string+0xb1>
+  a7:	b8 02 00 00 00       	mov    $0x2,%eax
+  ac:	e9 dd 00 00 00       	jmp    18e <ocall_print_string+0x18e>
+  b1:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  b5:	48 89 c7             	mov    %rax,%rdi
+  b8:	e8 00 00 00 00       	call   bd <ocall_print_string+0xbd>
+  bd:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  c1:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  c5:	48 85 c0             	test   %rax,%rax
+  c8:	75 0f                	jne    d9 <ocall_print_string+0xd9>
+  ca:	e8 00 00 00 00       	call   cf <ocall_print_string+0xcf>
+  cf:	b8 01 00 00 00       	mov    $0x1,%eax
+  d4:	e9 b5 00 00 00       	jmp    18e <ocall_print_string+0x18e>
+  d9:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  dd:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  e1:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  e5:	48 83 c0 08          	add    $0x8,%rax
+  e9:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  ed:	48 83 6d f8 08       	subq   $0x8,-0x8(%rbp)
+  f2:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  f7:	74 6e                	je     167 <ocall_print_string+0x167>
+  f9:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  fd:	48 8d 55 e0          	lea    -0x20(%rbp),%rdx
+ 101:	b9 08 00 00 00       	mov    $0x8,%ecx
+ 106:	be 08 00 00 00       	mov    $0x8,%esi
+ 10b:	48 89 c7             	mov    %rax,%rdi
+ 10e:	e8 00 00 00 00       	call   113 <ocall_print_string+0x113>
+ 113:	85 c0                	test   %eax,%eax
+ 115:	74 0c                	je     123 <ocall_print_string+0x123>
+ 117:	e8 00 00 00 00       	call   11c <ocall_print_string+0x11c>
+ 11c:	b8 01 00 00 00       	mov    $0x1,%eax
+ 121:	eb 6b                	jmp    18e <ocall_print_string+0x18e>
+ 123:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 127:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 12b:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+ 12f:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 133:	48 89 c7             	mov    %rax,%rdi
+ 136:	e8 00 00 00 00       	call   13b <ocall_print_string+0x13b>
+ 13b:	85 c0                	test   %eax,%eax
+ 13d:	74 0c                	je     14b <ocall_print_string+0x14b>
+ 13f:	e8 00 00 00 00       	call   144 <ocall_print_string+0x144>
+ 144:	b8 01 00 00 00       	mov    $0x1,%eax
+ 149:	eb 43                	jmp    18e <ocall_print_string+0x18e>
+ 14b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 14f:	48 89 c2             	mov    %rax,%rdx
+ 152:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 156:	48 01 d0             	add    %rdx,%rax
+ 159:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+ 15d:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 161:	48 29 45 f8          	sub    %rax,-0x8(%rbp)
+ 165:	eb 0b                	jmp    172 <ocall_print_string+0x172>
+ 167:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 16b:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+ 172:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 176:	48 89 c6             	mov    %rax,%rsi
+ 179:	bf 00 00 00 00       	mov    $0x0,%edi
+ 17e:	e8 00 00 00 00       	call   183 <ocall_print_string+0x183>
+ 183:	89 45 dc             	mov    %eax,-0x24(%rbp)
+ 186:	e8 00 00 00 00       	call   18b <ocall_print_string+0x18b>
+ 18b:	8b 45 dc             	mov    -0x24(%rbp),%eax
+ 18e:	c9                   	leave
+ 18f:	c3                   	ret
+
+Disassembly of section .text.ocall_pointer_user_check:
+
+0000000000000000 <ocall_pointer_user_check>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+  17:	48 c7 45 e8 00 00 00 	movq   $0x0,-0x18(%rbp)
+  1e:	00 
+  1f:	48 c7 45 f0 08 00 00 	movq   $0x8,-0x10(%rbp)
+  26:	00 
+  27:	48 c7 45 f8 00 00 00 	movq   $0x0,-0x8(%rbp)
+  2e:	00 
+  2f:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  33:	48 89 c7             	mov    %rax,%rdi
+  36:	e8 00 00 00 00       	call   3b <ocall_pointer_user_check+0x3b>
+  3b:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  3f:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  44:	75 0c                	jne    52 <ocall_pointer_user_check+0x52>
+  46:	e8 00 00 00 00       	call   4b <ocall_pointer_user_check+0x4b>
+  4b:	b8 01 00 00 00       	mov    $0x1,%eax
+  50:	eb 5f                	jmp    b1 <ocall_pointer_user_check+0xb1>
+  52:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  56:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  5a:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  5e:	48 83 c0 08          	add    $0x8,%rax
+  62:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  66:	48 83 6d f0 08       	subq   $0x8,-0x10(%rbp)
+  6b:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  6f:	48 8d 55 d8          	lea    -0x28(%rbp),%rdx
+  73:	b9 08 00 00 00       	mov    $0x8,%ecx
+  78:	be 08 00 00 00       	mov    $0x8,%esi
+  7d:	48 89 c7             	mov    %rax,%rdi
+  80:	e8 00 00 00 00       	call   85 <ocall_pointer_user_check+0x85>
+  85:	85 c0                	test   %eax,%eax
+  87:	74 0c                	je     95 <ocall_pointer_user_check+0x95>
+  89:	e8 00 00 00 00       	call   8e <ocall_pointer_user_check+0x8e>
+  8e:	b8 01 00 00 00       	mov    $0x1,%eax
+  93:	eb 1c                	jmp    b1 <ocall_pointer_user_check+0xb1>
+  95:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  99:	48 89 c6             	mov    %rax,%rsi
+  9c:	bf 01 00 00 00       	mov    $0x1,%edi
+  a1:	e8 00 00 00 00       	call   a6 <ocall_pointer_user_check+0xa6>
+  a6:	89 45 e4             	mov    %eax,-0x1c(%rbp)
+  a9:	e8 00 00 00 00       	call   ae <ocall_pointer_user_check+0xae>
+  ae:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  b1:	c9                   	leave
+  b2:	c3                   	ret
+
+Disassembly of section .text.ocall_pointer_in:
+
+0000000000000000 <ocall_pointer_in>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	c7 45 dc 00 00 00 00 	movl   $0x0,-0x24(%rbp)
+  17:	48 c7 45 e8 04 00 00 	movq   $0x4,-0x18(%rbp)
+  1e:	00 
+  1f:	48 c7 45 f0 00 00 00 	movq   $0x0,-0x10(%rbp)
+  26:	00 
+  27:	48 c7 45 f8 08 00 00 	movq   $0x8,-0x8(%rbp)
+  2e:	00 
+  2f:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  36:	00 
+  37:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  3c:	74 21                	je     5f <ocall_pointer_in+0x5f>
+  3e:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  42:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  46:	48 89 d6             	mov    %rdx,%rsi
+  49:	48 89 c7             	mov    %rax,%rdi
+  4c:	e8 00 00 00 00       	call   51 <ocall_pointer_in+0x51>
+  51:	85 c0                	test   %eax,%eax
+  53:	75 0a                	jne    5f <ocall_pointer_in+0x5f>
+  55:	b8 02 00 00 00       	mov    $0x2,%eax
+  5a:	e9 34 01 00 00       	jmp    193 <ocall_pointer_in+0x193>
+  5f:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  64:	74 06                	je     6c <ocall_pointer_in+0x6c>
+  66:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  6a:	eb 05                	jmp    71 <ocall_pointer_in+0x71>
+  6c:	b8 00 00 00 00       	mov    $0x0,%eax
+  71:	48 01 45 f8          	add    %rax,-0x8(%rbp)
+  75:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  7a:	74 06                	je     82 <ocall_pointer_in+0x82>
+  7c:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  80:	eb 05                	jmp    87 <ocall_pointer_in+0x87>
+  82:	b8 00 00 00 00       	mov    $0x0,%eax
+  87:	48 39 45 f8          	cmp    %rax,-0x8(%rbp)
+  8b:	73 0a                	jae    97 <ocall_pointer_in+0x97>
+  8d:	b8 02 00 00 00       	mov    $0x2,%eax
+  92:	e9 fc 00 00 00       	jmp    193 <ocall_pointer_in+0x193>
+  97:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  9b:	48 89 c7             	mov    %rax,%rdi
+  9e:	e8 00 00 00 00       	call   a3 <ocall_pointer_in+0xa3>
+  a3:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  a7:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  ab:	48 85 c0             	test   %rax,%rax
+  ae:	75 0f                	jne    bf <ocall_pointer_in+0xbf>
+  b0:	e8 00 00 00 00       	call   b5 <ocall_pointer_in+0xb5>
+  b5:	b8 01 00 00 00       	mov    $0x1,%eax
+  ba:	e9 d4 00 00 00       	jmp    193 <ocall_pointer_in+0x193>
+  bf:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  c3:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  c7:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  cb:	48 83 c0 08          	add    $0x8,%rax
+  cf:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  d3:	48 83 6d f8 08       	subq   $0x8,-0x8(%rbp)
+  d8:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  dd:	0f 84 89 00 00 00    	je     16c <ocall_pointer_in+0x16c>
+  e3:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  e7:	48 8d 55 e0          	lea    -0x20(%rbp),%rdx
+  eb:	b9 08 00 00 00       	mov    $0x8,%ecx
+  f0:	be 08 00 00 00       	mov    $0x8,%esi
+  f5:	48 89 c7             	mov    %rax,%rdi
+  f8:	e8 00 00 00 00       	call   fd <ocall_pointer_in+0xfd>
+  fd:	85 c0                	test   %eax,%eax
+  ff:	74 0f                	je     110 <ocall_pointer_in+0x110>
+ 101:	e8 00 00 00 00       	call   106 <ocall_pointer_in+0x106>
+ 106:	b8 01 00 00 00       	mov    $0x1,%eax
+ 10b:	e9 83 00 00 00       	jmp    193 <ocall_pointer_in+0x193>
+ 110:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 114:	83 e0 03             	and    $0x3,%eax
+ 117:	48 85 c0             	test   %rax,%rax
+ 11a:	74 0c                	je     128 <ocall_pointer_in+0x128>
+ 11c:	e8 00 00 00 00       	call   121 <ocall_pointer_in+0x121>
+ 121:	b8 02 00 00 00       	mov    $0x2,%eax
+ 126:	eb 6b                	jmp    193 <ocall_pointer_in+0x193>
+ 128:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 12c:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 130:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+ 134:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 138:	48 89 c7             	mov    %rax,%rdi
+ 13b:	e8 00 00 00 00       	call   140 <ocall_pointer_in+0x140>
+ 140:	85 c0                	test   %eax,%eax
+ 142:	74 0c                	je     150 <ocall_pointer_in+0x150>
+ 144:	e8 00 00 00 00       	call   149 <ocall_pointer_in+0x149>
+ 149:	b8 01 00 00 00       	mov    $0x1,%eax
+ 14e:	eb 43                	jmp    193 <ocall_pointer_in+0x193>
+ 150:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 154:	48 89 c2             	mov    %rax,%rdx
+ 157:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 15b:	48 01 d0             	add    %rdx,%rax
+ 15e:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+ 162:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 166:	48 29 45 f8          	sub    %rax,-0x8(%rbp)
+ 16a:	eb 0b                	jmp    177 <ocall_pointer_in+0x177>
+ 16c:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 170:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+ 177:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 17b:	48 89 c6             	mov    %rax,%rsi
+ 17e:	bf 02 00 00 00       	mov    $0x2,%edi
+ 183:	e8 00 00 00 00       	call   188 <ocall_pointer_in+0x188>
+ 188:	89 45 dc             	mov    %eax,-0x24(%rbp)
+ 18b:	e8 00 00 00 00       	call   190 <ocall_pointer_in+0x190>
+ 190:	8b 45 dc             	mov    -0x24(%rbp),%eax
+ 193:	c9                   	leave
+ 194:	c3                   	ret
+
+Disassembly of section .text.ocall_pointer_out:
+
+0000000000000000 <ocall_pointer_out>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%rbp)
+  17:	48 c7 45 e8 04 00 00 	movq   $0x4,-0x18(%rbp)
+  1e:	00 
+  1f:	48 c7 45 f0 00 00 00 	movq   $0x0,-0x10(%rbp)
+  26:	00 
+  27:	48 c7 45 f8 08 00 00 	movq   $0x8,-0x8(%rbp)
+  2e:	00 
+  2f:	48 c7 45 d8 00 00 00 	movq   $0x0,-0x28(%rbp)
+  36:	00 
+  37:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  3e:	00 
+  3f:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  44:	74 21                	je     67 <ocall_pointer_out+0x67>
+  46:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  4a:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  4e:	48 89 d6             	mov    %rdx,%rsi
+  51:	48 89 c7             	mov    %rax,%rdi
+  54:	e8 00 00 00 00       	call   59 <ocall_pointer_out+0x59>
+  59:	85 c0                	test   %eax,%eax
+  5b:	75 0a                	jne    67 <ocall_pointer_out+0x67>
+  5d:	b8 02 00 00 00       	mov    $0x2,%eax
+  62:	e9 61 01 00 00       	jmp    1c8 <ocall_pointer_out+0x1c8>
+  67:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  6c:	74 06                	je     74 <ocall_pointer_out+0x74>
+  6e:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  72:	eb 05                	jmp    79 <ocall_pointer_out+0x79>
+  74:	b8 00 00 00 00       	mov    $0x0,%eax
+  79:	48 01 45 f8          	add    %rax,-0x8(%rbp)
+  7d:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  82:	74 06                	je     8a <ocall_pointer_out+0x8a>
+  84:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  88:	eb 05                	jmp    8f <ocall_pointer_out+0x8f>
+  8a:	b8 00 00 00 00       	mov    $0x0,%eax
+  8f:	48 39 45 f8          	cmp    %rax,-0x8(%rbp)
+  93:	73 0a                	jae    9f <ocall_pointer_out+0x9f>
+  95:	b8 02 00 00 00       	mov    $0x2,%eax
+  9a:	e9 29 01 00 00       	jmp    1c8 <ocall_pointer_out+0x1c8>
+  9f:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  a3:	48 89 c7             	mov    %rax,%rdi
+  a6:	e8 00 00 00 00       	call   ab <ocall_pointer_out+0xab>
+  ab:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  af:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  b3:	48 85 c0             	test   %rax,%rax
+  b6:	75 0f                	jne    c7 <ocall_pointer_out+0xc7>
+  b8:	e8 00 00 00 00       	call   bd <ocall_pointer_out+0xbd>
+  bd:	b8 01 00 00 00       	mov    $0x1,%eax
+  c2:	e9 01 01 00 00       	jmp    1c8 <ocall_pointer_out+0x1c8>
+  c7:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  cb:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  cf:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  d3:	48 83 c0 08          	add    $0x8,%rax
+  d7:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  db:	48 83 6d f8 08       	subq   $0x8,-0x8(%rbp)
+  e0:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  e5:	0f 84 81 00 00 00    	je     16c <ocall_pointer_out+0x16c>
+  eb:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  ef:	48 8d 55 d8          	lea    -0x28(%rbp),%rdx
+  f3:	b9 08 00 00 00       	mov    $0x8,%ecx
+  f8:	be 08 00 00 00       	mov    $0x8,%esi
+  fd:	48 89 c7             	mov    %rax,%rdi
+ 100:	e8 00 00 00 00       	call   105 <ocall_pointer_out+0x105>
+ 105:	85 c0                	test   %eax,%eax
+ 107:	74 0f                	je     118 <ocall_pointer_out+0x118>
+ 109:	e8 00 00 00 00       	call   10e <ocall_pointer_out+0x10e>
+ 10e:	b8 01 00 00 00       	mov    $0x1,%eax
+ 113:	e9 b0 00 00 00       	jmp    1c8 <ocall_pointer_out+0x1c8>
+ 118:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 11c:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+ 120:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 124:	83 e0 03             	and    $0x3,%eax
+ 127:	48 85 c0             	test   %rax,%rax
+ 12a:	74 0f                	je     13b <ocall_pointer_out+0x13b>
+ 12c:	e8 00 00 00 00       	call   131 <ocall_pointer_out+0x131>
+ 131:	b8 02 00 00 00       	mov    $0x2,%eax
+ 136:	e9 8d 00 00 00       	jmp    1c8 <ocall_pointer_out+0x1c8>
+ 13b:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+ 13f:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 143:	be 00 00 00 00       	mov    $0x0,%esi
+ 148:	48 89 c7             	mov    %rax,%rdi
+ 14b:	e8 00 00 00 00       	call   150 <ocall_pointer_out+0x150>
+ 150:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 154:	48 89 c2             	mov    %rax,%rdx
+ 157:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 15b:	48 01 d0             	add    %rdx,%rax
+ 15e:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+ 162:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 166:	48 29 45 f8          	sub    %rax,-0x8(%rbp)
+ 16a:	eb 0b                	jmp    177 <ocall_pointer_out+0x177>
+ 16c:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 170:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+ 177:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 17b:	48 89 c6             	mov    %rax,%rsi
+ 17e:	bf 03 00 00 00       	mov    $0x3,%edi
+ 183:	e8 00 00 00 00       	call   188 <ocall_pointer_out+0x188>
+ 188:	89 45 d4             	mov    %eax,-0x2c(%rbp)
+ 18b:	83 7d d4 00          	cmpl   $0x0,-0x2c(%rbp)
+ 18f:	75 2f                	jne    1c0 <ocall_pointer_out+0x1c0>
+ 191:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 196:	74 28                	je     1c0 <ocall_pointer_out+0x1c0>
+ 198:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 19c:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 1a0:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+ 1a4:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 1a8:	48 89 c7             	mov    %rax,%rdi
+ 1ab:	e8 00 00 00 00       	call   1b0 <ocall_pointer_out+0x1b0>
+ 1b0:	85 c0                	test   %eax,%eax
+ 1b2:	74 0c                	je     1c0 <ocall_pointer_out+0x1c0>
+ 1b4:	e8 00 00 00 00       	call   1b9 <ocall_pointer_out+0x1b9>
+ 1b9:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1be:	eb 08                	jmp    1c8 <ocall_pointer_out+0x1c8>
+ 1c0:	e8 00 00 00 00       	call   1c5 <ocall_pointer_out+0x1c5>
+ 1c5:	8b 45 d4             	mov    -0x2c(%rbp),%eax
+ 1c8:	c9                   	leave
+ 1c9:	c3                   	ret
+
+Disassembly of section .text.ocall_pointer_in_out:
+
+0000000000000000 <ocall_pointer_in_out>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%rbp)
+  17:	48 c7 45 e8 04 00 00 	movq   $0x4,-0x18(%rbp)
+  1e:	00 
+  1f:	48 c7 45 f0 00 00 00 	movq   $0x0,-0x10(%rbp)
+  26:	00 
+  27:	48 c7 45 f8 08 00 00 	movq   $0x8,-0x8(%rbp)
+  2e:	00 
+  2f:	48 c7 45 d8 00 00 00 	movq   $0x0,-0x28(%rbp)
+  36:	00 
+  37:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  3e:	00 
+  3f:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  44:	74 21                	je     67 <ocall_pointer_in_out+0x67>
+  46:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  4a:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  4e:	48 89 d6             	mov    %rdx,%rsi
+  51:	48 89 c7             	mov    %rax,%rdi
+  54:	e8 00 00 00 00       	call   59 <ocall_pointer_in_out+0x59>
+  59:	85 c0                	test   %eax,%eax
+  5b:	75 0a                	jne    67 <ocall_pointer_in_out+0x67>
+  5d:	b8 02 00 00 00       	mov    $0x2,%eax
+  62:	e9 74 01 00 00       	jmp    1db <ocall_pointer_in_out+0x1db>
+  67:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  6c:	74 06                	je     74 <ocall_pointer_in_out+0x74>
+  6e:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  72:	eb 05                	jmp    79 <ocall_pointer_in_out+0x79>
+  74:	b8 00 00 00 00       	mov    $0x0,%eax
+  79:	48 01 45 f8          	add    %rax,-0x8(%rbp)
+  7d:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  82:	74 06                	je     8a <ocall_pointer_in_out+0x8a>
+  84:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  88:	eb 05                	jmp    8f <ocall_pointer_in_out+0x8f>
+  8a:	b8 00 00 00 00       	mov    $0x0,%eax
+  8f:	48 39 45 f8          	cmp    %rax,-0x8(%rbp)
+  93:	73 0a                	jae    9f <ocall_pointer_in_out+0x9f>
+  95:	b8 02 00 00 00       	mov    $0x2,%eax
+  9a:	e9 3c 01 00 00       	jmp    1db <ocall_pointer_in_out+0x1db>
+  9f:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  a3:	48 89 c7             	mov    %rax,%rdi
+  a6:	e8 00 00 00 00       	call   ab <ocall_pointer_in_out+0xab>
+  ab:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  af:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  b3:	48 85 c0             	test   %rax,%rax
+  b6:	75 0f                	jne    c7 <ocall_pointer_in_out+0xc7>
+  b8:	e8 00 00 00 00       	call   bd <ocall_pointer_in_out+0xbd>
+  bd:	b8 01 00 00 00       	mov    $0x1,%eax
+  c2:	e9 14 01 00 00       	jmp    1db <ocall_pointer_in_out+0x1db>
+  c7:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  cb:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  cf:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  d3:	48 83 c0 08          	add    $0x8,%rax
+  d7:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  db:	48 83 6d f8 08       	subq   $0x8,-0x8(%rbp)
+  e0:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  e5:	0f 84 94 00 00 00    	je     17f <ocall_pointer_in_out+0x17f>
+  eb:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  ef:	48 8d 55 d8          	lea    -0x28(%rbp),%rdx
+  f3:	b9 08 00 00 00       	mov    $0x8,%ecx
+  f8:	be 08 00 00 00       	mov    $0x8,%esi
+  fd:	48 89 c7             	mov    %rax,%rdi
+ 100:	e8 00 00 00 00       	call   105 <ocall_pointer_in_out+0x105>
+ 105:	85 c0                	test   %eax,%eax
+ 107:	74 0f                	je     118 <ocall_pointer_in_out+0x118>
+ 109:	e8 00 00 00 00       	call   10e <ocall_pointer_in_out+0x10e>
+ 10e:	b8 01 00 00 00       	mov    $0x1,%eax
+ 113:	e9 c3 00 00 00       	jmp    1db <ocall_pointer_in_out+0x1db>
+ 118:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 11c:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+ 120:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 124:	83 e0 03             	and    $0x3,%eax
+ 127:	48 85 c0             	test   %rax,%rax
+ 12a:	74 0f                	je     13b <ocall_pointer_in_out+0x13b>
+ 12c:	e8 00 00 00 00       	call   131 <ocall_pointer_in_out+0x131>
+ 131:	b8 02 00 00 00       	mov    $0x2,%eax
+ 136:	e9 a0 00 00 00       	jmp    1db <ocall_pointer_in_out+0x1db>
+ 13b:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 13f:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 143:	48 8b 55 c8          	mov    -0x38(%rbp),%rdx
+ 147:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 14b:	48 89 c7             	mov    %rax,%rdi
+ 14e:	e8 00 00 00 00       	call   153 <ocall_pointer_in_out+0x153>
+ 153:	85 c0                	test   %eax,%eax
+ 155:	74 0c                	je     163 <ocall_pointer_in_out+0x163>
+ 157:	e8 00 00 00 00       	call   15c <ocall_pointer_in_out+0x15c>
+ 15c:	b8 01 00 00 00       	mov    $0x1,%eax
+ 161:	eb 78                	jmp    1db <ocall_pointer_in_out+0x1db>
+ 163:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 167:	48 89 c2             	mov    %rax,%rdx
+ 16a:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 16e:	48 01 d0             	add    %rdx,%rax
+ 171:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+ 175:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 179:	48 29 45 f8          	sub    %rax,-0x8(%rbp)
+ 17d:	eb 0b                	jmp    18a <ocall_pointer_in_out+0x18a>
+ 17f:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 183:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+ 18a:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 18e:	48 89 c6             	mov    %rax,%rsi
+ 191:	bf 04 00 00 00       	mov    $0x4,%edi
+ 196:	e8 00 00 00 00       	call   19b <ocall_pointer_in_out+0x19b>
+ 19b:	89 45 d4             	mov    %eax,-0x2c(%rbp)
+ 19e:	83 7d d4 00          	cmpl   $0x0,-0x2c(%rbp)
+ 1a2:	75 2f                	jne    1d3 <ocall_pointer_in_out+0x1d3>
+ 1a4:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 1a9:	74 28                	je     1d3 <ocall_pointer_in_out+0x1d3>
+ 1ab:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 1af:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 1b3:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+ 1b7:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 1bb:	48 89 c7             	mov    %rax,%rdi
+ 1be:	e8 00 00 00 00       	call   1c3 <ocall_pointer_in_out+0x1c3>
+ 1c3:	85 c0                	test   %eax,%eax
+ 1c5:	74 0c                	je     1d3 <ocall_pointer_in_out+0x1d3>
+ 1c7:	e8 00 00 00 00       	call   1cc <ocall_pointer_in_out+0x1cc>
+ 1cc:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1d1:	eb 08                	jmp    1db <ocall_pointer_in_out+0x1db>
+ 1d3:	e8 00 00 00 00       	call   1d8 <ocall_pointer_in_out+0x1d8>
+ 1d8:	8b 45 d4             	mov    -0x2c(%rbp),%eax
+ 1db:	c9                   	leave
+ 1dc:	c3                   	ret
+
+Disassembly of section .text.ocall_function_allow:
+
+0000000000000000 <ocall_function_allow>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 10          	sub    $0x10,%rsp
+   c:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  13:	be 00 00 00 00       	mov    $0x0,%esi
+  18:	bf 05 00 00 00       	mov    $0x5,%edi
+  1d:	e8 00 00 00 00       	call   22 <ocall_function_allow+0x22>
+  22:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  25:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  28:	c9                   	leave
+  29:	c3                   	ret
+
+Disassembly of section .text.sgx_oc_cpuidex:
+
+0000000000000000 <sgx_oc_cpuidex>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	89 75 c4             	mov    %esi,-0x3c(%rbp)
+  13:	89 55 c0             	mov    %edx,-0x40(%rbp)
+  16:	c7 45 d4 00 00 00 00 	movl   $0x0,-0x2c(%rbp)
+  1d:	48 c7 45 e8 10 00 00 	movq   $0x10,-0x18(%rbp)
+  24:	00 
+  25:	48 c7 45 f0 00 00 00 	movq   $0x0,-0x10(%rbp)
+  2c:	00 
+  2d:	48 c7 45 f8 10 00 00 	movq   $0x10,-0x8(%rbp)
+  34:	00 
+  35:	48 c7 45 d8 00 00 00 	movq   $0x0,-0x28(%rbp)
+  3c:	00 
+  3d:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  44:	00 
+  45:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  4a:	74 21                	je     6d <sgx_oc_cpuidex+0x6d>
+  4c:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  50:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  54:	48 89 d6             	mov    %rdx,%rsi
+  57:	48 89 c7             	mov    %rax,%rdi
+  5a:	e8 00 00 00 00       	call   5f <sgx_oc_cpuidex+0x5f>
+  5f:	85 c0                	test   %eax,%eax
+  61:	75 0a                	jne    6d <sgx_oc_cpuidex+0x6d>
+  63:	b8 02 00 00 00       	mov    $0x2,%eax
+  68:	e9 bd 01 00 00       	jmp    22a <sgx_oc_cpuidex+0x22a>
+  6d:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  72:	74 06                	je     7a <sgx_oc_cpuidex+0x7a>
+  74:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  78:	eb 05                	jmp    7f <sgx_oc_cpuidex+0x7f>
+  7a:	b8 00 00 00 00       	mov    $0x0,%eax
+  7f:	48 01 45 f8          	add    %rax,-0x8(%rbp)
+  83:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  88:	74 06                	je     90 <sgx_oc_cpuidex+0x90>
+  8a:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  8e:	eb 05                	jmp    95 <sgx_oc_cpuidex+0x95>
+  90:	b8 00 00 00 00       	mov    $0x0,%eax
+  95:	48 39 45 f8          	cmp    %rax,-0x8(%rbp)
+  99:	73 0a                	jae    a5 <sgx_oc_cpuidex+0xa5>
+  9b:	b8 02 00 00 00       	mov    $0x2,%eax
+  a0:	e9 85 01 00 00       	jmp    22a <sgx_oc_cpuidex+0x22a>
+  a5:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  a9:	48 89 c7             	mov    %rax,%rdi
+  ac:	e8 00 00 00 00       	call   b1 <sgx_oc_cpuidex+0xb1>
+  b1:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  b5:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  b9:	48 85 c0             	test   %rax,%rax
+  bc:	75 0f                	jne    cd <sgx_oc_cpuidex+0xcd>
+  be:	e8 00 00 00 00       	call   c3 <sgx_oc_cpuidex+0xc3>
+  c3:	b8 01 00 00 00       	mov    $0x1,%eax
+  c8:	e9 5d 01 00 00       	jmp    22a <sgx_oc_cpuidex+0x22a>
+  cd:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  d1:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  d5:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  d9:	48 83 c0 10          	add    $0x10,%rax
+  dd:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+  e1:	48 83 6d f8 10       	subq   $0x10,-0x8(%rbp)
+  e6:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+  eb:	0f 84 81 00 00 00    	je     172 <sgx_oc_cpuidex+0x172>
+  f1:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  f5:	48 8d 55 d8          	lea    -0x28(%rbp),%rdx
+  f9:	b9 08 00 00 00       	mov    $0x8,%ecx
+  fe:	be 08 00 00 00       	mov    $0x8,%esi
+ 103:	48 89 c7             	mov    %rax,%rdi
+ 106:	e8 00 00 00 00       	call   10b <sgx_oc_cpuidex+0x10b>
+ 10b:	85 c0                	test   %eax,%eax
+ 10d:	74 0f                	je     11e <sgx_oc_cpuidex+0x11e>
+ 10f:	e8 00 00 00 00       	call   114 <sgx_oc_cpuidex+0x114>
+ 114:	b8 01 00 00 00       	mov    $0x1,%eax
+ 119:	e9 0c 01 00 00       	jmp    22a <sgx_oc_cpuidex+0x22a>
+ 11e:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 122:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+ 126:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 12a:	83 e0 03             	and    $0x3,%eax
+ 12d:	48 85 c0             	test   %rax,%rax
+ 130:	74 0f                	je     141 <sgx_oc_cpuidex+0x141>
+ 132:	e8 00 00 00 00       	call   137 <sgx_oc_cpuidex+0x137>
+ 137:	b8 02 00 00 00       	mov    $0x2,%eax
+ 13c:	e9 e9 00 00 00       	jmp    22a <sgx_oc_cpuidex+0x22a>
+ 141:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+ 145:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 149:	be 00 00 00 00       	mov    $0x0,%esi
+ 14e:	48 89 c7             	mov    %rax,%rdi
+ 151:	e8 00 00 00 00       	call   156 <sgx_oc_cpuidex+0x156>
+ 156:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 15a:	48 89 c2             	mov    %rax,%rdx
+ 15d:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 161:	48 01 d0             	add    %rdx,%rax
+ 164:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+ 168:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 16c:	48 29 45 f8          	sub    %rax,-0x8(%rbp)
+ 170:	eb 0b                	jmp    17d <sgx_oc_cpuidex+0x17d>
+ 172:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 176:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+ 17d:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 181:	48 8d 78 08          	lea    0x8(%rax),%rdi
+ 185:	48 8d 45 c4          	lea    -0x3c(%rbp),%rax
+ 189:	b9 04 00 00 00       	mov    $0x4,%ecx
+ 18e:	48 89 c2             	mov    %rax,%rdx
+ 191:	be 04 00 00 00       	mov    $0x4,%esi
+ 196:	e8 00 00 00 00       	call   19b <sgx_oc_cpuidex+0x19b>
+ 19b:	85 c0                	test   %eax,%eax
+ 19d:	74 0c                	je     1ab <sgx_oc_cpuidex+0x1ab>
+ 19f:	e8 00 00 00 00       	call   1a4 <sgx_oc_cpuidex+0x1a4>
+ 1a4:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1a9:	eb 7f                	jmp    22a <sgx_oc_cpuidex+0x22a>
+ 1ab:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 1af:	48 8d 78 0c          	lea    0xc(%rax),%rdi
+ 1b3:	48 8d 45 c0          	lea    -0x40(%rbp),%rax
+ 1b7:	b9 04 00 00 00       	mov    $0x4,%ecx
+ 1bc:	48 89 c2             	mov    %rax,%rdx
+ 1bf:	be 04 00 00 00       	mov    $0x4,%esi
+ 1c4:	e8 00 00 00 00       	call   1c9 <sgx_oc_cpuidex+0x1c9>
+ 1c9:	85 c0                	test   %eax,%eax
+ 1cb:	74 0c                	je     1d9 <sgx_oc_cpuidex+0x1d9>
+ 1cd:	e8 00 00 00 00       	call   1d2 <sgx_oc_cpuidex+0x1d2>
+ 1d2:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1d7:	eb 51                	jmp    22a <sgx_oc_cpuidex+0x22a>
+ 1d9:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 1dd:	48 89 c6             	mov    %rax,%rsi
+ 1e0:	bf 06 00 00 00       	mov    $0x6,%edi
+ 1e5:	e8 00 00 00 00       	call   1ea <sgx_oc_cpuidex+0x1ea>
+ 1ea:	89 45 d4             	mov    %eax,-0x2c(%rbp)
+ 1ed:	83 7d d4 00          	cmpl   $0x0,-0x2c(%rbp)
+ 1f1:	75 2f                	jne    222 <sgx_oc_cpuidex+0x222>
+ 1f3:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 1f8:	74 28                	je     222 <sgx_oc_cpuidex+0x222>
+ 1fa:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 1fe:	48 8b 55 e0          	mov    -0x20(%rbp),%rdx
+ 202:	48 8b 75 e8          	mov    -0x18(%rbp),%rsi
+ 206:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 20a:	48 89 c7             	mov    %rax,%rdi
+ 20d:	e8 00 00 00 00       	call   212 <sgx_oc_cpuidex+0x212>
+ 212:	85 c0                	test   %eax,%eax
+ 214:	74 0c                	je     222 <sgx_oc_cpuidex+0x222>
+ 216:	e8 00 00 00 00       	call   21b <sgx_oc_cpuidex+0x21b>
+ 21b:	b8 01 00 00 00       	mov    $0x1,%eax
+ 220:	eb 08                	jmp    22a <sgx_oc_cpuidex+0x22a>
+ 222:	e8 00 00 00 00       	call   227 <sgx_oc_cpuidex+0x227>
+ 227:	8b 45 d4             	mov    -0x2c(%rbp),%eax
+ 22a:	c9                   	leave
+ 22b:	c3                   	ret
+
+Disassembly of section .text.sgx_thread_wait_untrusted_event_ocall:
+
+0000000000000000 <sgx_thread_wait_untrusted_event_ocall>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 89 75 d0          	mov    %rsi,-0x30(%rbp)
+  14:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+  1b:	48 c7 45 e8 00 00 00 	movq   $0x0,-0x18(%rbp)
+  22:	00 
+  23:	48 c7 45 f0 10 00 00 	movq   $0x10,-0x10(%rbp)
+  2a:	00 
+  2b:	48 c7 45 f8 00 00 00 	movq   $0x0,-0x8(%rbp)
+  32:	00 
+  33:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  37:	48 89 c7             	mov    %rax,%rdi
+  3a:	e8 00 00 00 00       	call   3f <sgx_thread_wait_untrusted_event_ocall+0x3f>
+  3f:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  43:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  48:	75 0f                	jne    59 <sgx_thread_wait_untrusted_event_ocall+0x59>
+  4a:	e8 00 00 00 00       	call   4f <sgx_thread_wait_untrusted_event_ocall+0x4f>
+  4f:	b8 01 00 00 00       	mov    $0x1,%eax
+  54:	e9 9a 00 00 00       	jmp    f3 <sgx_thread_wait_untrusted_event_ocall+0xf3>
+  59:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  5d:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  61:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  65:	48 83 c0 10          	add    $0x10,%rax
+  69:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  6d:	48 83 6d f0 10       	subq   $0x10,-0x10(%rbp)
+  72:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  76:	48 8d 78 08          	lea    0x8(%rax),%rdi
+  7a:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  7e:	b9 08 00 00 00       	mov    $0x8,%ecx
+  83:	48 89 c2             	mov    %rax,%rdx
+  86:	be 08 00 00 00       	mov    $0x8,%esi
+  8b:	e8 00 00 00 00       	call   90 <sgx_thread_wait_untrusted_event_ocall+0x90>
+  90:	85 c0                	test   %eax,%eax
+  92:	74 0c                	je     a0 <sgx_thread_wait_untrusted_event_ocall+0xa0>
+  94:	e8 00 00 00 00       	call   99 <sgx_thread_wait_untrusted_event_ocall+0x99>
+  99:	b8 01 00 00 00       	mov    $0x1,%eax
+  9e:	eb 53                	jmp    f3 <sgx_thread_wait_untrusted_event_ocall+0xf3>
+  a0:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  a4:	48 89 c6             	mov    %rax,%rsi
+  a7:	bf 07 00 00 00       	mov    $0x7,%edi
+  ac:	e8 00 00 00 00       	call   b1 <sgx_thread_wait_untrusted_event_ocall+0xb1>
+  b1:	89 45 e4             	mov    %eax,-0x1c(%rbp)
+  b4:	83 7d e4 00          	cmpl   $0x0,-0x1c(%rbp)
+  b8:	75 31                	jne    eb <sgx_thread_wait_untrusted_event_ocall+0xeb>
+  ba:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  bf:	74 2a                	je     eb <sgx_thread_wait_untrusted_event_ocall+0xeb>
+  c1:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  c5:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  c9:	b9 04 00 00 00       	mov    $0x4,%ecx
+  ce:	be 04 00 00 00       	mov    $0x4,%esi
+  d3:	48 89 c7             	mov    %rax,%rdi
+  d6:	e8 00 00 00 00       	call   db <sgx_thread_wait_untrusted_event_ocall+0xdb>
+  db:	85 c0                	test   %eax,%eax
+  dd:	74 0c                	je     eb <sgx_thread_wait_untrusted_event_ocall+0xeb>
+  df:	e8 00 00 00 00       	call   e4 <sgx_thread_wait_untrusted_event_ocall+0xe4>
+  e4:	b8 01 00 00 00       	mov    $0x1,%eax
+  e9:	eb 08                	jmp    f3 <sgx_thread_wait_untrusted_event_ocall+0xf3>
+  eb:	e8 00 00 00 00       	call   f0 <sgx_thread_wait_untrusted_event_ocall+0xf0>
+  f0:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  f3:	c9                   	leave
+  f4:	c3                   	ret
+
+Disassembly of section .text.sgx_thread_set_untrusted_event_ocall:
+
+0000000000000000 <sgx_thread_set_untrusted_event_ocall>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 30          	sub    $0x30,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 89 75 d0          	mov    %rsi,-0x30(%rbp)
+  14:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+  1b:	48 c7 45 e8 00 00 00 	movq   $0x0,-0x18(%rbp)
+  22:	00 
+  23:	48 c7 45 f0 10 00 00 	movq   $0x10,-0x10(%rbp)
+  2a:	00 
+  2b:	48 c7 45 f8 00 00 00 	movq   $0x0,-0x8(%rbp)
+  32:	00 
+  33:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  37:	48 89 c7             	mov    %rax,%rdi
+  3a:	e8 00 00 00 00       	call   3f <sgx_thread_set_untrusted_event_ocall+0x3f>
+  3f:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  43:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  48:	75 0f                	jne    59 <sgx_thread_set_untrusted_event_ocall+0x59>
+  4a:	e8 00 00 00 00       	call   4f <sgx_thread_set_untrusted_event_ocall+0x4f>
+  4f:	b8 01 00 00 00       	mov    $0x1,%eax
+  54:	e9 9a 00 00 00       	jmp    f3 <sgx_thread_set_untrusted_event_ocall+0xf3>
+  59:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  5d:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  61:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  65:	48 83 c0 10          	add    $0x10,%rax
+  69:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  6d:	48 83 6d f0 10       	subq   $0x10,-0x10(%rbp)
+  72:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  76:	48 8d 78 08          	lea    0x8(%rax),%rdi
+  7a:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  7e:	b9 08 00 00 00       	mov    $0x8,%ecx
+  83:	48 89 c2             	mov    %rax,%rdx
+  86:	be 08 00 00 00       	mov    $0x8,%esi
+  8b:	e8 00 00 00 00       	call   90 <sgx_thread_set_untrusted_event_ocall+0x90>
+  90:	85 c0                	test   %eax,%eax
+  92:	74 0c                	je     a0 <sgx_thread_set_untrusted_event_ocall+0xa0>
+  94:	e8 00 00 00 00       	call   99 <sgx_thread_set_untrusted_event_ocall+0x99>
+  99:	b8 01 00 00 00       	mov    $0x1,%eax
+  9e:	eb 53                	jmp    f3 <sgx_thread_set_untrusted_event_ocall+0xf3>
+  a0:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  a4:	48 89 c6             	mov    %rax,%rsi
+  a7:	bf 08 00 00 00       	mov    $0x8,%edi
+  ac:	e8 00 00 00 00       	call   b1 <sgx_thread_set_untrusted_event_ocall+0xb1>
+  b1:	89 45 e4             	mov    %eax,-0x1c(%rbp)
+  b4:	83 7d e4 00          	cmpl   $0x0,-0x1c(%rbp)
+  b8:	75 31                	jne    eb <sgx_thread_set_untrusted_event_ocall+0xeb>
+  ba:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  bf:	74 2a                	je     eb <sgx_thread_set_untrusted_event_ocall+0xeb>
+  c1:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  c5:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  c9:	b9 04 00 00 00       	mov    $0x4,%ecx
+  ce:	be 04 00 00 00       	mov    $0x4,%esi
+  d3:	48 89 c7             	mov    %rax,%rdi
+  d6:	e8 00 00 00 00       	call   db <sgx_thread_set_untrusted_event_ocall+0xdb>
+  db:	85 c0                	test   %eax,%eax
+  dd:	74 0c                	je     eb <sgx_thread_set_untrusted_event_ocall+0xeb>
+  df:	e8 00 00 00 00       	call   e4 <sgx_thread_set_untrusted_event_ocall+0xe4>
+  e4:	b8 01 00 00 00       	mov    $0x1,%eax
+  e9:	eb 08                	jmp    f3 <sgx_thread_set_untrusted_event_ocall+0xf3>
+  eb:	e8 00 00 00 00       	call   f0 <sgx_thread_set_untrusted_event_ocall+0xf0>
+  f0:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+  f3:	c9                   	leave
+  f4:	c3                   	ret
+
+Disassembly of section .text.sgx_thread_setwait_untrusted_events_ocall:
+
+0000000000000000 <sgx_thread_setwait_untrusted_events_ocall>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 40          	sub    $0x40,%rsp
+   c:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+  10:	48 89 75 d0          	mov    %rsi,-0x30(%rbp)
+  14:	48 89 55 c8          	mov    %rdx,-0x38(%rbp)
+  18:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+  1f:	48 c7 45 e8 00 00 00 	movq   $0x0,-0x18(%rbp)
+  26:	00 
+  27:	48 c7 45 f0 18 00 00 	movq   $0x18,-0x10(%rbp)
+  2e:	00 
+  2f:	48 c7 45 f8 00 00 00 	movq   $0x0,-0x8(%rbp)
+  36:	00 
+  37:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  3b:	48 89 c7             	mov    %rax,%rdi
+  3e:	e8 00 00 00 00       	call   43 <sgx_thread_setwait_untrusted_events_ocall+0x43>
+  43:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  47:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+  4c:	75 0f                	jne    5d <sgx_thread_setwait_untrusted_events_ocall+0x5d>
+  4e:	e8 00 00 00 00       	call   53 <sgx_thread_setwait_untrusted_events_ocall+0x53>
+  53:	b8 01 00 00 00       	mov    $0x1,%eax
+  58:	e9 cb 00 00 00       	jmp    128 <sgx_thread_setwait_untrusted_events_ocall+0x128>
+  5d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  61:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  65:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  69:	48 83 c0 18          	add    $0x18,%rax
+  6d:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  71:	48 83 6d f0 18       	subq   $0x18,-0x10(%rbp)
+  76:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  7a:	48 8d 78 08          	lea    0x8(%rax),%rdi
+  7e:	48 8d 45 d0          	lea    -0x30(%rbp),%rax
+  82:	b9 08 00 00 00       	mov    $0x8,%ecx
+  87:	48 89 c2             	mov    %rax,%rdx
+  8a:	be 08 00 00 00       	mov    $0x8,%esi
+  8f:	e8 00 00 00 00       	call   94 <sgx_thread_setwait_untrusted_events_ocall+0x94>
+  94:	85 c0                	test   %eax,%eax
+  96:	74 0f                	je     a7 <sgx_thread_setwait_untrusted_events_ocall+0xa7>
+  98:	e8 00 00 00 00       	call   9d <sgx_thread_setwait_untrusted_events_ocall+0x9d>
+  9d:	b8 01 00 00 00       	mov    $0x1,%eax
+  a2:	e9 81 00 00 00       	jmp    128 <sgx_thread_setwait_untrusted_events_ocall+0x128>
+  a7:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  ab:	48 8d 78 10          	lea    0x10(%rax),%rdi
+  af:	48 8d 45 c8          	lea    -0x38(%rbp),%rax
+  b3:	b9 08 00 00 00       	mov    $0x8,%ecx
+  b8:	48 89 c2             	mov    %rax,%rdx
+  bb:	be 08 00 00 00       	mov    $0x8,%esi
+  c0:	e8 00 00 00 00       	call   c5 <sgx_thread_setwait_untrusted_events_ocall+0xc5>
+  c5:	85 c0                	test   %eax,%eax
+  c7:	74 0c                	je     d5 <sgx_thread_setwait_untrusted_events_ocall+0xd5>
+  c9:	e8 00 00 00 00       	call   ce <sgx_thread_setwait_untrusted_events_ocall+0xce>
+  ce:	b8 01 00 00 00       	mov    $0x1,%eax
+  d3:	eb 53                	jmp    128 <sgx_thread_setwait_untrusted_events_ocall+0x128>
+  d5:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  d9:	48 89 c6             	mov    %rax,%rsi
+  dc:	bf 09 00 00 00       	mov    $0x9,%edi
+  e1:	e8 00 00 00 00       	call   e6 <sgx_thread_setwait_untrusted_events_ocall+0xe6>
+  e6:	89 45 e4             	mov    %eax,-0x1c(%rbp)
+  e9:	83 7d e4 00          	cmpl   $0x0,-0x1c(%rbp)
+  ed:	75 31                	jne    120 <sgx_thread_setwait_untrusted_events_ocall+0x120>
+  ef:	48 83 7d d8 00       	cmpq   $0x0,-0x28(%rbp)
+  f4:	74 2a                	je     120 <sgx_thread_setwait_untrusted_events_ocall+0x120>
+  f6:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  fa:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  fe:	b9 04 00 00 00       	mov    $0x4,%ecx
+ 103:	be 04 00 00 00       	mov    $0x4,%esi
+ 108:	48 89 c7             	mov    %rax,%rdi
+ 10b:	e8 00 00 00 00       	call   110 <sgx_thread_setwait_untrusted_events_ocall+0x110>
+ 110:	85 c0                	test   %eax,%eax
+ 112:	74 0c                	je     120 <sgx_thread_setwait_untrusted_events_ocall+0x120>
+ 114:	e8 00 00 00 00       	call   119 <sgx_thread_setwait_untrusted_events_ocall+0x119>
+ 119:	b8 01 00 00 00       	mov    $0x1,%eax
+ 11e:	eb 08                	jmp    128 <sgx_thread_setwait_untrusted_events_ocall+0x128>
+ 120:	e8 00 00 00 00       	call   125 <sgx_thread_setwait_untrusted_events_ocall+0x125>
+ 125:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+ 128:	c9                   	leave
+ 129:	c3                   	ret
+
+Disassembly of section .text.sgx_thread_set_multiple_untrusted_events_ocall:
+
+0000000000000000 <sgx_thread_set_multiple_untrusted_events_ocall>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	48 83 ec 50          	sub    $0x50,%rsp
+   c:	48 89 7d c8          	mov    %rdi,-0x38(%rbp)
+  10:	48 89 75 c0          	mov    %rsi,-0x40(%rbp)
+  14:	48 89 55 b8          	mov    %rdx,-0x48(%rbp)
+  18:	c7 45 dc 00 00 00 00 	movl   $0x0,-0x24(%rbp)
+  1f:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+  23:	48 c1 e0 03          	shl    $0x3,%rax
+  27:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  2b:	48 c7 45 f0 00 00 00 	movq   $0x0,-0x10(%rbp)
+  32:	00 
+  33:	48 c7 45 f8 18 00 00 	movq   $0x18,-0x8(%rbp)
+  3a:	00 
+  3b:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+  42:	00 
+  43:	48 83 7d c0 00       	cmpq   $0x0,-0x40(%rbp)
+  48:	74 21                	je     6b <sgx_thread_set_multiple_untrusted_events_ocall+0x6b>
+  4a:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  4e:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+  52:	48 89 d6             	mov    %rdx,%rsi
+  55:	48 89 c7             	mov    %rax,%rdi
+  58:	e8 00 00 00 00       	call   5d <sgx_thread_set_multiple_untrusted_events_ocall+0x5d>
+  5d:	85 c0                	test   %eax,%eax
+  5f:	75 0a                	jne    6b <sgx_thread_set_multiple_untrusted_events_ocall+0x6b>
+  61:	b8 02 00 00 00       	mov    $0x2,%eax
+  66:	e9 a4 01 00 00       	jmp    20f <sgx_thread_set_multiple_untrusted_events_ocall+0x20f>
+  6b:	48 83 7d c0 00       	cmpq   $0x0,-0x40(%rbp)
+  70:	74 06                	je     78 <sgx_thread_set_multiple_untrusted_events_ocall+0x78>
+  72:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  76:	eb 05                	jmp    7d <sgx_thread_set_multiple_untrusted_events_ocall+0x7d>
+  78:	b8 00 00 00 00       	mov    $0x0,%eax
+  7d:	48 01 45 f8          	add    %rax,-0x8(%rbp)
+  81:	48 83 7d c0 00       	cmpq   $0x0,-0x40(%rbp)
+  86:	74 06                	je     8e <sgx_thread_set_multiple_untrusted_events_ocall+0x8e>
+  88:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  8c:	eb 05                	jmp    93 <sgx_thread_set_multiple_untrusted_events_ocall+0x93>
+  8e:	b8 00 00 00 00       	mov    $0x0,%eax
+  93:	48 39 45 f8          	cmp    %rax,-0x8(%rbp)
+  97:	73 0a                	jae    a3 <sgx_thread_set_multiple_untrusted_events_ocall+0xa3>
+  99:	b8 02 00 00 00       	mov    $0x2,%eax
+  9e:	e9 6c 01 00 00       	jmp    20f <sgx_thread_set_multiple_untrusted_events_ocall+0x20f>
+  a3:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  a7:	48 89 c7             	mov    %rax,%rdi
+  aa:	e8 00 00 00 00       	call   af <sgx_thread_set_multiple_untrusted_events_ocall+0xaf>
+  af:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  b3:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  b7:	48 85 c0             	test   %rax,%rax
+  ba:	75 0f                	jne    cb <sgx_thread_set_multiple_untrusted_events_ocall+0xcb>
+  bc:	e8 00 00 00 00       	call   c1 <sgx_thread_set_multiple_untrusted_events_ocall+0xc1>
+  c1:	b8 01 00 00 00       	mov    $0x1,%eax
+  c6:	e9 44 01 00 00       	jmp    20f <sgx_thread_set_multiple_untrusted_events_ocall+0x20f>
+  cb:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  cf:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  d3:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  d7:	48 83 c0 18          	add    $0x18,%rax
+  db:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+  df:	48 83 6d f8 18       	subq   $0x18,-0x8(%rbp)
+  e4:	48 83 7d c0 00       	cmpq   $0x0,-0x40(%rbp)
+  e9:	0f 84 93 00 00 00    	je     182 <sgx_thread_set_multiple_untrusted_events_ocall+0x182>
+  ef:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  f3:	48 8d 78 08          	lea    0x8(%rax),%rdi
+  f7:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+  fb:	b9 08 00 00 00       	mov    $0x8,%ecx
+ 100:	48 89 c2             	mov    %rax,%rdx
+ 103:	be 08 00 00 00       	mov    $0x8,%esi
+ 108:	e8 00 00 00 00       	call   10d <sgx_thread_set_multiple_untrusted_events_ocall+0x10d>
+ 10d:	85 c0                	test   %eax,%eax
+ 10f:	74 0f                	je     120 <sgx_thread_set_multiple_untrusted_events_ocall+0x120>
+ 111:	e8 00 00 00 00       	call   116 <sgx_thread_set_multiple_untrusted_events_ocall+0x116>
+ 116:	b8 01 00 00 00       	mov    $0x1,%eax
+ 11b:	e9 ef 00 00 00       	jmp    20f <sgx_thread_set_multiple_untrusted_events_ocall+0x20f>
+ 120:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 124:	83 e0 07             	and    $0x7,%eax
+ 127:	48 85 c0             	test   %rax,%rax
+ 12a:	74 0f                	je     13b <sgx_thread_set_multiple_untrusted_events_ocall+0x13b>
+ 12c:	e8 00 00 00 00       	call   131 <sgx_thread_set_multiple_untrusted_events_ocall+0x131>
+ 131:	b8 02 00 00 00       	mov    $0x2,%eax
+ 136:	e9 d4 00 00 00       	jmp    20f <sgx_thread_set_multiple_untrusted_events_ocall+0x20f>
+ 13b:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 13f:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+ 143:	48 8b 55 c0          	mov    -0x40(%rbp),%rdx
+ 147:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+ 14b:	48 89 c7             	mov    %rax,%rdi
+ 14e:	e8 00 00 00 00       	call   153 <sgx_thread_set_multiple_untrusted_events_ocall+0x153>
+ 153:	85 c0                	test   %eax,%eax
+ 155:	74 0f                	je     166 <sgx_thread_set_multiple_untrusted_events_ocall+0x166>
+ 157:	e8 00 00 00 00       	call   15c <sgx_thread_set_multiple_untrusted_events_ocall+0x15c>
+ 15c:	b8 01 00 00 00       	mov    $0x1,%eax
+ 161:	e9 a9 00 00 00       	jmp    20f <sgx_thread_set_multiple_untrusted_events_ocall+0x20f>
+ 166:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 16a:	48 89 c2             	mov    %rax,%rdx
+ 16d:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 171:	48 01 d0             	add    %rdx,%rax
+ 174:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+ 178:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 17c:	48 29 45 f8          	sub    %rax,-0x8(%rbp)
+ 180:	eb 0c                	jmp    18e <sgx_thread_set_multiple_untrusted_events_ocall+0x18e>
+ 182:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 186:	48 c7 40 08 00 00 00 	movq   $0x0,0x8(%rax)
+ 18d:	00 
+ 18e:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 192:	48 8d 78 10          	lea    0x10(%rax),%rdi
+ 196:	48 8d 45 b8          	lea    -0x48(%rbp),%rax
+ 19a:	b9 08 00 00 00       	mov    $0x8,%ecx
+ 19f:	48 89 c2             	mov    %rax,%rdx
+ 1a2:	be 08 00 00 00       	mov    $0x8,%esi
+ 1a7:	e8 00 00 00 00       	call   1ac <sgx_thread_set_multiple_untrusted_events_ocall+0x1ac>
+ 1ac:	85 c0                	test   %eax,%eax
+ 1ae:	74 0c                	je     1bc <sgx_thread_set_multiple_untrusted_events_ocall+0x1bc>
+ 1b0:	e8 00 00 00 00       	call   1b5 <sgx_thread_set_multiple_untrusted_events_ocall+0x1b5>
+ 1b5:	b8 01 00 00 00       	mov    $0x1,%eax
+ 1ba:	eb 53                	jmp    20f <sgx_thread_set_multiple_untrusted_events_ocall+0x20f>
+ 1bc:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 1c0:	48 89 c6             	mov    %rax,%rsi
+ 1c3:	bf 0a 00 00 00       	mov    $0xa,%edi
+ 1c8:	e8 00 00 00 00       	call   1cd <sgx_thread_set_multiple_untrusted_events_ocall+0x1cd>
+ 1cd:	89 45 dc             	mov    %eax,-0x24(%rbp)
+ 1d0:	83 7d dc 00          	cmpl   $0x0,-0x24(%rbp)
+ 1d4:	75 31                	jne    207 <sgx_thread_set_multiple_untrusted_events_ocall+0x207>
+ 1d6:	48 83 7d c8 00       	cmpq   $0x0,-0x38(%rbp)
+ 1db:	74 2a                	je     207 <sgx_thread_set_multiple_untrusted_events_ocall+0x207>
+ 1dd:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+ 1e1:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 1e5:	b9 04 00 00 00       	mov    $0x4,%ecx
+ 1ea:	be 04 00 00 00       	mov    $0x4,%esi
+ 1ef:	48 89 c7             	mov    %rax,%rdi
+ 1f2:	e8 00 00 00 00       	call   1f7 <sgx_thread_set_multiple_untrusted_events_ocall+0x1f7>
+ 1f7:	85 c0                	test   %eax,%eax
+ 1f9:	74 0c                	je     207 <sgx_thread_set_multiple_untrusted_events_ocall+0x207>
+ 1fb:	e8 00 00 00 00       	call   200 <sgx_thread_set_multiple_untrusted_events_ocall+0x200>
+ 200:	b8 01 00 00 00       	mov    $0x1,%eax
+ 205:	eb 08                	jmp    20f <sgx_thread_set_multiple_untrusted_events_ocall+0x20f>
+ 207:	e8 00 00 00 00       	call   20c <sgx_thread_set_multiple_untrusted_events_ocall+0x20c>
+ 20c:	8b 45 dc             	mov    -0x24(%rbp),%eax
+ 20f:	c9                   	leave
+ 210:	c3                   	ret
