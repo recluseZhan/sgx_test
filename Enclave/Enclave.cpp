@@ -65,9 +65,12 @@ void *get_saved_reg(unsigned long offset) {
     return value;
 }
 
+unsigned long source[10]={0,1,2,3,4,5,6,7,8,9};
+unsigned long target[10]={0};
 static unsigned long data = 0x123;
 void ecall_read(unsigned long *va){
-    unsigned long data_va = (unsigned long)&data;
+    //unsigned long data_va = (unsigned long)&data;
+    unsigned long data_va = (unsigned long)source;
     *va = data_va;
     printf("va:0x%lx,&data,0x%lx,data:0x%lx\n",*va,&data,data);
 }
@@ -113,8 +116,8 @@ void ecall_write2(unsigned long *va){
     printf("t3.2:0x%lx,0x%lx\n",va,*va);
 }
 
-unsigned long source[10]={0,1,2,3,4,5,6,7,8,9};
-unsigned long target[10]={0};
+//unsigned long source[10]={0,1,2,3,4,5,6,7,8,9};
+//unsigned long target[10]={0};
 void ecall_write3(void){
     int i = 0;
     for(i=0;i<10;i++){
