@@ -73,7 +73,7 @@ void ecall_read(unsigned long *va){
     //unsigned long data_va = (unsigned long)&data;
     unsigned long data_va = (unsigned long)source;
     *va = data_va;
-    printf("va:0x%lx,&data,0x%lx,data:0x%lx\n",*va,&data,data);
+    printf("va:0x%lx,&data:0x%lx,data:0x%lx\n",*va,source,source[0]);
 }
 
 static sgx_thread_t self_tcs;
@@ -126,9 +126,16 @@ void ecall_write3(void){
     }
     printf("\n");
     
-    sgx_cpu_context_t *ctx;
+    //sgx_cpu_context_t *ctx;
     //unsigned long ctx_rdi = ctx->rdi;
     //printf("ctx_rdi:0x%lx\n",ctx_rdi);
+    unsigned long *ssa_rdi;
+    asm volatile(
+        "mov %%gs:0x8,%%rax\n\t"
+        "lea 0x56(%%rax),%0\n\t"
+	:"=r"(ssa_rdi)::
+    );
+    printf("ssa_rdi:0x%lx\n",ssa_rdi);
 
     unsigned long s,t;
     s = (unsigned long)source;

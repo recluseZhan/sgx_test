@@ -265,7 +265,7 @@ int SGX_CDECL main(int argc, char *argv[])
         "mov %0,%%rdi\n\t"
 	::"r"(va):
     );
-    ecall_reg(global_eid);
+    //ecall_reg(global_eid);
    // eenter_enter_enclave(tcs,aep);
     
     /*
