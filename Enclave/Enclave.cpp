@@ -52,6 +52,19 @@ int printf(const char* fmt, ...)
 }
 
 //
+void *get_saved_reg(unsigned long offset) {
+    void *value;
+    asm volatile(
+        "mov %%gs:0x8,%%rax\n\t"
+        "add %1,%%rax\n\t"     
+        "mov (%%rax),%0 \n\t"
+        : "=r"(value)
+        : "r"(offset)
+        : "rax"
+    );
+    return value;
+}
+
 static unsigned long data = 0x123;
 void ecall_read(unsigned long *va){
     unsigned long data_va = (unsigned long)&data;
@@ -64,6 +77,25 @@ void ecall_tcs(unsigned long *tcs){
     self_tcs = sgx_thread_self();
     *tcs = (unsigned long)self_tcs;
     printf("tcs:0x%lx\n",*tcs);
+    //__asm__ volatile("mov %%gs:0, %0" : "=r"(tcs));
+    //printf("tcs:0x%lx\n",tcs);
+}
+
+static unsigned long self_aep;
+void ecall_aep(unsigned long *aep){
+    asm volatile(
+        "mov %%gs:0x8,%%rax\n\t"
+	"mov 0x10(%%rax),%0\n\t"
+	:"=r"(self_aep)
+	::"rax"
+    );
+    *aep = self_aep;
+    printf("aep:0x%lx\n",*aep);
+}
+
+void ecall_reg(void){
+    unsigned long *app_rdi = (unsigned long *)get_saved_reg(0x30);
+    printf("app_rdi:0x%lx,app_rdi_value:0x%lx\n",app_rdi,app_rdi);
 }
 
 void ecall_write(void){

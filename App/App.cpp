@@ -256,12 +256,17 @@ int SGX_CDECL main(int argc, char *argv[])
     printf("tcs:0x%lx\n",tcs);  
 
     unsigned long aep = get_current_aep();
+    //unsigned long aep;
+    //ecall_aep(global_eid, &aep);
+    //printf("aep:0x%lx\n",aep);
 
     asm volatile(
         "mov %0,%%rdi\n\t"
 	::"r"(va):
     );
+    //ecall_reg(global_eid);
     eenter_enter_enclave(tcs,aep);
+    
     /*
     asm volatile(
         //"EENTER_PROLOG\n\t"
@@ -278,8 +283,8 @@ int SGX_CDECL main(int argc, char *argv[])
         ::"r"(tcs),"r"(aep),"r"(&ecall_write):	
     );*/
 
-    ecall_write(global_eid);
-    ecall_write2(global_eid,(unsigned long*)va);    
+    //ecall_write(global_eid);
+    //ecall_write2(global_eid,(unsigned long*)va);
     //
 
     /* Destroy the enclave */
