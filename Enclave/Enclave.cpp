@@ -78,7 +78,6 @@ void ecall_tcs(unsigned long *tcs){
     *tcs = (unsigned long)self_tcs;
     printf("tcs:0x%lx\n",*tcs);
     //__asm__ volatile("mov %%gs:0, %0" : "=r"(tcs));
-    //printf("tcs:0x%lx\n",tcs);
 }
 
 static unsigned long self_aep;
@@ -112,5 +111,31 @@ void ecall_write2(unsigned long *va){
     printf("t3.1:0x%lx,0x%lx\n",va,*va);
     *va = 0x234;
     printf("t3.2:0x%lx,0x%lx\n",va,*va);
+}
+
+unsigned long source[10]={0,1,2,3,4,5,6,7,8,9};
+unsigned long target[10]={0};
+void ecall_write3(void){
+    int i = 0;
+    for(i=0;i<10;i++){
+        printf("%lx ",target[i]);
+    }
+    printf("\n");
+    
+    unsigned long s,t;
+    s = (unsigned long)source;
+    t = (unsigned long)target;
+    asm volatile(
+        "mov %0,%%rdi\n\t"
+        "mov $20,%%rcx\n\t"
+        "mov %1,%%rsi\n\t"
+	"rep movsd"
+        ::"r"(t),"r"(s):	
+    );
+
+    for(i=0;i<10;i++){
+        printf("%lx ",target[i]);
+    }
+    printf("\n");
 }
 //

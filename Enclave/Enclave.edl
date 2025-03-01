@@ -62,6 +62,7 @@ enclave {
         public void ecall_reg(void);
         public void ecall_write(void);
         public void ecall_write2([user_check] unsigned long* va);
+        public void ecall_write3(void);
     };
     untrusted {
         void ocall_print_string([in, string] const char *str); 

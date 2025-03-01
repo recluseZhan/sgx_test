@@ -219,6 +219,7 @@ void eenter_enter_enclave(unsigned long tcs_addr, unsigned long aep_addr) {
     );
     printf("result=0x%x\n",result);
 }
+
 //
 
 /* Application entry */
@@ -265,7 +266,7 @@ int SGX_CDECL main(int argc, char *argv[])
 	::"r"(va):
     );
     //ecall_reg(global_eid);
-    eenter_enter_enclave(tcs,aep);
+   // eenter_enter_enclave(tcs,aep);
     
     /*
     asm volatile(
@@ -285,6 +286,7 @@ int SGX_CDECL main(int argc, char *argv[])
 
     //ecall_write(global_eid);
     //ecall_write2(global_eid,(unsigned long*)va);
+    ecall_write3(global_eid);
     //
 
     /* Destroy the enclave */
