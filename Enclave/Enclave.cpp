@@ -34,6 +34,7 @@
 #include <stdarg.h>
 #include <stdio.h> /* vsnprintf */
 #include <string.h>
+#include <sgx_thread.h>
 
 /* 
  * printf: 
@@ -58,6 +59,13 @@ void ecall_read(unsigned long *va){
     printf("va:0x%lx,&data,0x%lx,data:0x%lx\n",*va,&data,data);
 }
 
+static sgx_thread_t self_tcs;
+void ecall_tcs(unsigned long *tcs){
+    self_tcs = sgx_thread_self();
+    *tcs = (unsigned long)self_tcs;
+    printf("tcs:0x%lx\n",*tcs);
+}
+
 void ecall_write(void){
     unsigned long va;
     asm volatile(
@@ -66,7 +74,6 @@ void ecall_write(void){
     );
     //*va=0x234;
     printf("test2:0x%lx\n",va);
-    
 }
 
 void ecall_write2(unsigned long *va){

@@ -42,6 +42,8 @@
 #include "App.h"
 #include "Enclave_u.h"
 
+#include <sgx_trts.h>
+
 /* Global EID shared by multiple threads */
 sgx_enclave_id_t global_eid = 0;
 
@@ -181,6 +183,8 @@ void ocall_print_string(const char *str)
     printf("%s", str);
 }
 
+//
+//
 
 /* Application entry */
 int SGX_CDECL main(int argc, char *argv[])
@@ -211,13 +215,24 @@ int SGX_CDECL main(int argc, char *argv[])
     unsigned long va;
     ecall_read(global_eid, &va);
     printf("test:0x%lx\n",va);
-    
+  
+    unsigned long tcs;
+    ecall_tcs(global_eid, &tcs);
+    printf("tcs:0x%lx\n",tcs);  
+
     asm volatile(
         "mov %0,%%rdi\n\t"
 	::"r"(va):
     );
-    ecall_write(global_eid);
     
+    asm volatile(
+        "mov $0x2,%%rax\n\t"
+	"mov %0,%%rbx\n\t"
+        "enclu\n\t"
+        ::"r"(tcs):	
+    );
+
+    ecall_write(global_eid);
     ecall_write2(global_eid,(unsigned long*)va);    
     //
 

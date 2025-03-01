@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2021 Intel Corporation. All rights reserved.
+ * Copyright (C) 2011-2019 Intel Corporation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -29,40 +29,74 @@
  *
  */
 
-/* Enclave.edl - Top EDL file. */
 
-enclave {
-    
-    include "user_types.h" /* buffer_t */
+#include "enclave_entry.h"
+.data
+g_clean_ymm:
+.long 0
+.data
+g_tcs:
+.word 0x0
+.word 0x0
+.word 0x0
+.word 0x0
+.data
+g_aep_pointer:
+.word 0x0
+.word 0x0
+.word 0x0
+.word 0x0
 
-    /* Import ECALL/OCALL from sub-directory EDLs.
-     *  [from]: specifies the location of EDL file. 
-     *  [import]: specifies the functions to import, 
-     *  [*]: implies to import all functions.
-     */
-    
-    from "Edger8rSyntax/Types.edl" import *;
-    from "Edger8rSyntax/Pointers.edl" import *;
-    from "Edger8rSyntax/Arrays.edl" import *;
-    from "Edger8rSyntax/Functions.edl" import *;
+.text
+.global sgx_reporter_enter
+.global sgx_reporter_enter2
+sgx_reporter_enter:
+EENTER_PROLOG
 
-    from "TrustedLibrary/Libc.edl" import *;
-    from "TrustedLibrary/Libcxx.edl" import ecall_exception, ecall_map;
-    from "TrustedLibrary/Thread.edl" import *;
+mov %rdi, (%rdi)
+mov $0x2, %rax
+mov %rsi, %rbx
+enclu
 
-    /* 
-     * ocall_print_string - invokes OCALL to display string buffer inside the enclave.
-     *  [in]: copy the string buffer to App outside.
-     *  [string]: specifies 'str' is a NULL terminated buffer.
-     */
-    trusted {
-        public void ecall_read([out] unsigned long* va);
-        public void ecall_tcs([out] unsigned long *tcs);
-        public void ecall_write(void);
-        public void ecall_write2([user_check] unsigned long* va);
-    };
-    untrusted {
-        void ocall_print_string([in, string] const char *str); 
-    };
+lea_pic sgx_async_exit, %rcx
+sgx_async_exit:
+//    .byte 0x0f, 0x01, 0xd7
 
-};
+
+EENTER_EPILOG
+retq
+
+
+sgx_reporter_enter2:
+EENTER_PROLOG
+mov frame_arg3, %rdi                       /* output */
+mov %r8, %r10                               /*size*/
+
+lea exit_inst(%rip),%r11                   /*return*/
+//clean the upper bits of YMM registers
+lea_pic  g_clean_ymm, %rbx
+mov (%rbx), %rcx
+cmp $0, %rcx
+je   1f
+vzeroupper
+1:
+mov         frame_arg0, %rbx                /* tcs addr */
+lea_pic     g_tcs, %rax
+mov         %rbx, (%rax)
+/* fetch AEP; init when NULL */
+lea_pic     g_aep_pointer, %rax
+mov         (%rax), %rcx                    /* aep addr */
+cmp         $0x0, %rcx
+jnz 1f
+lea_pic     __default_async_exit_pointer, %rcx
+mov         %rcx, (%rax)
+1:
+mov         $0x2, %rax                /* EENTER leaf */
+
+__default_async_exit_pointer:
+ENCLU
+
+exit_inst:
+EENTER_EPILOG
+retq
+
