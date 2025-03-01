@@ -184,6 +184,41 @@ void ocall_print_string(const char *str)
 }
 
 //
+extern "C" __attribute__((naked)) void aep_handler() {
+    asm volatile(
+        "ret\n\t"
+    );
+}
+unsigned long get_current_aep() {
+    unsigned long aep_addr;
+    asm volatile(
+        "lea aep_handler(%%rip), %0\n\t"
+        : "=r"(aep_addr)
+    );
+    printf("aep_addr=0x%lx,aep_handler=0x%lx\n",aep_addr,&aep_handler);
+    return aep_addr;
+}
+
+#define SE_EENTER 0x2
+void eenter_enter_enclave(unsigned long tcs_addr, unsigned long aep_addr) {
+    uint32_t result;
+    asm volatile(
+        // clear YMM
+        "vzeroupper\n\t"
+        // RBX=TCS addr，RCX=AEP addr，RAX=EENTER leaf
+        "mov %[tcs], %%rbx\n\t"
+        "mov %[aep], %%rcx\n\t"
+        "mov %[leaf], %%rax\n\t"
+	"enclu\n\t"
+        // EAX=StatusCode
+        : "=a"(result)
+        : [tcs] "r"(tcs_addr),
+          [aep] "r"(aep_addr),
+          [leaf] "i"(SE_EENTER)
+        : "rbx", "rcx", "memory"
+    );
+    printf("result=0x%x\n",result);
+}
 //
 
 /* Application entry */
@@ -220,17 +255,28 @@ int SGX_CDECL main(int argc, char *argv[])
     ecall_tcs(global_eid, &tcs);
     printf("tcs:0x%lx\n",tcs);  
 
+    unsigned long aep = get_current_aep();
+
     asm volatile(
         "mov %0,%%rdi\n\t"
 	::"r"(va):
     );
-    
+    eenter_enter_enclave(tcs,aep);
+    /*
     asm volatile(
+        //"EENTER_PROLOG\n\t"
         "mov $0x2,%%rax\n\t"
 	"mov %0,%%rbx\n\t"
+	"mov %1,%%rcx\n\t"
         "enclu\n\t"
-        ::"r"(tcs):	
-    );
+        
+	"mov $0x4,%%rax\n\t"
+	"mov %2,%%rbx\n\t"
+	"enclu\n\t"
+        	
+	//"EENTER_EPILOG\n\t"
+        ::"r"(tcs),"r"(aep),"r"(&ecall_write):	
+    );*/
 
     ecall_write(global_eid);
     ecall_write2(global_eid,(unsigned long*)va);    
