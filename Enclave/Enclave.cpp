@@ -35,6 +35,7 @@
 #include <stdio.h> /* vsnprintf */
 #include <string.h>
 #include <sgx_thread.h>
+#include <sgx_trts_exception.h>
 
 /* 
  * printf: 
@@ -96,7 +97,7 @@ void ecall_aep(unsigned long *aep){
 }
 
 void ecall_reg(void){
-    unsigned long *app_rdi = (unsigned long *)get_saved_reg(0x30);
+    unsigned long *app_rdi = (unsigned long *)get_saved_reg(0x68);
     printf("app_rdi:0x%lx,app_rdi_value:0x%lx\n",app_rdi,app_rdi);
 }
 
@@ -125,6 +126,10 @@ void ecall_write3(void){
     }
     printf("\n");
     
+    sgx_cpu_context_t *ctx;
+    //unsigned long ctx_rdi = ctx->rdi;
+    //printf("ctx_rdi:0x%lx\n",ctx_rdi);
+
     unsigned long s,t;
     s = (unsigned long)source;
     t = (unsigned long)target;
