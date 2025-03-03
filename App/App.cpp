@@ -266,7 +266,7 @@ int SGX_CDECL main(int argc, char *argv[])
 	::"r"(va):
     );
     //ecall_reg(global_eid);
-   // eenter_enter_enclave(tcs,aep);
+    //eenter_enter_enclave(tcs,aep);
     
     /*
     asm volatile(

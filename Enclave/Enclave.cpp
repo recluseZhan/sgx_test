@@ -116,7 +116,8 @@ void ecall_write2(unsigned long *va){
     *va = 0x234;
     printf("t3.2:0x%lx,0x%lx\n",va,*va);
 }
-
+//#include <sgx_trts.h>
+//#include <sgx_urts.h>
 //unsigned long source[10]={0,1,2,3,4,5,6,7,8,9};
 //unsigned long target[10]={0};
 void ecall_write3(void){
@@ -129,6 +130,21 @@ void ecall_write3(void){
     //sgx_cpu_context_t *ctx;
     //unsigned long ctx_rdi = ctx->rdi;
     //printf("ctx_rdi:0x%lx\n",ctx_rdi);
+    
+    unsigned long *tcs_base;
+    unsigned long *ssa_base;
+    unsigned long rdi_base;
+    asm volatile(
+        "mov %%gs:0x0,%0\n\t"
+	"mov 0x10(%0),%1\n\t"
+	"mov 0x38(%1),%2\n\t"
+        :"=r"(tcs_base),"=r"(ssa_base),"=r"(rdi_base)
+    );
+    //tcs_t *tcs = (tcs_t*)tcs_base;
+    //ssa_base = tcs_base + tcs->ossa;
+    //ssa_base = tcs_base + 0x10;
+    printf("tcs_base:0x%lx, ssa_base:0x%lx, rdi_base:0x%x\n",tcs_base,ssa_base,rdi_base);
+    /*
     unsigned long *ssa_rdi;
     asm volatile(
         "mov %%gs:0x8,%%rax\n\t"
@@ -136,7 +152,7 @@ void ecall_write3(void){
 	:"=r"(ssa_rdi)::
     );
     printf("ssa_rdi:0x%lx\n",ssa_rdi);
-
+    */
     unsigned long s,t;
     s = (unsigned long)source;
     t = (unsigned long)target;
