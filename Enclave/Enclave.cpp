@@ -131,9 +131,23 @@ void ecall_write3(void){
     //unsigned long ctx_rdi = ctx->rdi;
     //printf("ctx_rdi:0x%lx\n",ctx_rdi);
     
-    unsigned long *tcs_base;
-    unsigned long *ssa_base;
+    unsigned long tcs_base;
+    unsigned long ssa_base;
+    unsigned long *ssa_a;
     unsigned long rdi_base;
+    unsigned long *rdi_a;
+    
+    asm volatile(
+        "mov %%gs:0x0,%0\n\t":"=r"(tcs_base)		    
+    );
+    ssa_base = tcs_base+0x10;
+    ssa_a = (unsigned long*)ssa_base;
+    ssa_base = *ssa_a;
+    rdi_base = ssa_base+0x38;
+    rdi_a = (unsigned long*)rdi_base;
+
+    printf("tcs_base:0x%lx, ssa_base:0x%lx, rdi_base:0x%lx\n",tcs_base,ssa_base,*rdi_a);
+    /*
     asm volatile(
         "mov %%gs:0x0,%0\n\t"
 	"mov 0x10(%0),%1\n\t"
@@ -143,7 +157,7 @@ void ecall_write3(void){
     //tcs_t *tcs = (tcs_t*)tcs_base;
     //ssa_base = tcs_base + tcs->ossa;
     //ssa_base = tcs_base + 0x10;
-    printf("tcs_base:0x%lx, ssa_base:0x%lx, rdi_base:0x%x\n",tcs_base,ssa_base,rdi_base);
+    printf("tcs_base:0x%lx, ssa_base:0x%lx, rdi_base:0x%x\n",tcs_base,ssa_base,rdi_base);*/
     /*
     unsigned long *ssa_rdi;
     asm volatile(
