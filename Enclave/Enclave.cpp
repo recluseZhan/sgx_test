@@ -122,6 +122,7 @@ void ecall_write2(unsigned long *va){
 //unsigned long target[10]={0};
 void ecall_write3(void){
     int i = 0;
+    printf("target:");
     for(i=0;i<10;i++){
         printf("%lx ",target[i]);
     }
@@ -158,7 +159,7 @@ void ecall_write3(void){
     //tcs_t *tcs = (tcs_t*)tcs_base;
     //ssa_base = tcs_base + tcs->ossa;
     //ssa_base = tcs_base + 0x10;
-    printf("tcs_base:0x%lx, ssa_base:0x%lx, rdi_base:0x%lx\n",tcs_base,ssa_base,rdi_base);
+    //printf("tcs_base:0x%lx, ssa_base:0x%lx, rdi_base:0x%lx\n",tcs_base,ssa_base,rdi_base);
     /*
     unsigned long *ssa_rdi;
     asm volatile(
@@ -178,7 +179,7 @@ void ecall_write3(void){
 	"rep movsd"
         ::"r"(t),"r"(s):	
     );
-
+    printf("target:");
     for(i=0;i<10;i++){
         printf("%lx ",target[i]);
     }
