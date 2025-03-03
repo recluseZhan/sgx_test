@@ -37,6 +37,8 @@
 #include <sgx_thread.h>
 #include <sgx_trts_exception.h>
 
+#include <sgx_trts.h>
+#include <sgx_urts.h>
 /* 
  * printf: 
  *   Invokes OCALL to display the enclave buffer to the terminal.
@@ -116,8 +118,6 @@ void ecall_write2(unsigned long *va){
     *va = 0x234;
     printf("t3.2:0x%lx,0x%lx\n",va,*va);
 }
-//#include <sgx_trts.h>
-//#include <sgx_urts.h>
 //unsigned long source[10]={0,1,2,3,4,5,6,7,8,9};
 //unsigned long target[10]={0};
 void ecall_write3(void){
@@ -131,12 +131,14 @@ void ecall_write3(void){
     //unsigned long ctx_rdi = ctx->rdi;
     //printf("ctx_rdi:0x%lx\n",ctx_rdi);
     
+    sgx_cpu_context_t *ctx;
+
     unsigned long tcs_base;
     unsigned long ssa_base;
-    unsigned long *ssa_a;
+    //unsigned long *ssa_a;
     unsigned long rdi_base;
-    unsigned long *rdi_a;
-    
+    //unsigned long *rdi_a;
+    /*
     asm volatile(
         "mov %%gs:0x0,%0\n\t":"=r"(tcs_base)		    
     );
@@ -145,9 +147,8 @@ void ecall_write3(void){
     ssa_base = *ssa_a;
     rdi_base = ssa_base+0x38;
     rdi_a = (unsigned long*)rdi_base;
-
     printf("tcs_base:0x%lx, ssa_base:0x%lx, rdi_base:0x%lx\n",tcs_base,ssa_base,*rdi_a);
-    /*
+    */
     asm volatile(
         "mov %%gs:0x0,%0\n\t"
 	"mov 0x10(%0),%1\n\t"
@@ -157,7 +158,7 @@ void ecall_write3(void){
     //tcs_t *tcs = (tcs_t*)tcs_base;
     //ssa_base = tcs_base + tcs->ossa;
     //ssa_base = tcs_base + 0x10;
-    printf("tcs_base:0x%lx, ssa_base:0x%lx, rdi_base:0x%x\n",tcs_base,ssa_base,rdi_base);*/
+    printf("tcs_base:0x%lx, ssa_base:0x%lx, rdi_base:0x%lx\n",tcs_base,ssa_base,rdi_base);
     /*
     unsigned long *ssa_rdi;
     asm volatile(
